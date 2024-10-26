@@ -1,0 +1,64 @@
+unit Unit_responsavel;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TForm2 = class(TForm)
+    Label1: TLabel;
+    DBEdit1: TDBEdit;
+    DataSource1: TDataSource;
+    Label2: TLabel;
+    DBMemo1: TDBMemo;
+    DBGrid1: TDBGrid;
+    ButtonAdicionar: TButton;
+    ButtonExcluir: TButton;
+    TFDTable_responsavel: TFDTable;
+    TFDTable_responsavelcodigo: TFDAutoIncField;
+    TFDTable_responsavelnome: TWideMemoField;
+    procedure ButtonAdicionarClick(Sender: TObject);
+    procedure ButtonExcluirClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm2.ButtonAdicionarClick(Sender: TObject);
+begin
+  TFDTable_responsavel.Append;
+end;
+
+procedure TForm2.ButtonExcluirClick(Sender: TObject);
+begin
+  TFDTable_responsavel.Delete;
+end;
+
+procedure TForm2.FormClose(Sender: TObject; var Action: TCloseAction);
+begin
+  TFDTable_responsavel.Close();
+end;
+
+procedure TForm2.FormCreate(Sender: TObject);
+begin
+  TFDTable_responsavel.Open();
+end;
+
+end.

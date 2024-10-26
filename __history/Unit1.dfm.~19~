@@ -1,0 +1,163 @@
+object Form1: TForm1
+  Left = 0
+  Top = 0
+  Caption = 'Form1'
+  ClientHeight = 545
+  ClientWidth = 626
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  OnClose = FormClose
+  OnCreate = FormCreate
+  TextHeight = 15
+  object Label1: TLabel
+    Left = 210
+    Top = 160
+    Width = 37
+    Height = 15
+    Caption = 'codigo'
+    FocusControl = DBEdit1
+  end
+  object Label2: TLabel
+    Left = 210
+    Top = 208
+    Width = 31
+    Height = 15
+    Caption = 'nome'
+    FocusControl = DBMemo1
+  end
+  object DBGrid1: TDBGrid
+    Left = 136
+    Top = 375
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 0
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    OnDrawColumnCell = DBGrid1DrawColumnCell
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Visible = True
+      end>
+  end
+  object buttonAdicionar: TButton
+    Left = 64
+    Top = 512
+    Width = 75
+    Height = 25
+    Caption = 'Adicionar'
+    TabOrder = 1
+    OnClick = buttonAdicionarClick
+  end
+  object buttonAlterar: TButton
+    Left = 190
+    Top = 512
+    Width = 75
+    Height = 25
+    Caption = 'Alterar'
+    TabOrder = 2
+    OnClick = buttonAlterarClick
+  end
+  object buttonExcluir: TButton
+    Left = 320
+    Top = 512
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 3
+    OnClick = buttonExcluirClick
+  end
+  object buttonSalvar: TButton
+    Left = 445
+    Top = 512
+    Width = 75
+    Height = 25
+    Caption = 'Salvar'
+    TabOrder = 4
+    OnClick = buttonSalvarClick
+  end
+  object DBEdit1: TDBEdit
+    Left = 210
+    Top = 176
+    Width = 154
+    Height = 23
+    DataField = 'codigo'
+    DataSource = DataSource1
+    TabOrder = 5
+  end
+  object DBMemo1: TDBMemo
+    Left = 210
+    Top = 224
+    Width = 185
+    Height = 89
+    DataField = 'nome'
+    DataSource = DataSource1
+    TabOrder = 6
+  end
+  object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
+    Left = 40
+    Top = 40
+  end
+  object FDConnection1: TFDConnection
+    Params.Strings = (
+      'Database=D:\projeto_extensao-2024\banco_independentes.db'
+      'SharedCache=False'
+      'LockingMode=Normal'
+      'DriverID=SQLite')
+    LoginPrompt = False
+    Left = 152
+    Top = 40
+  end
+  object FDLocalSQL1: TFDLocalSQL
+    Connection = FDConnection1
+    Active = True
+    Left = 248
+    Top = 40
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM TB_responsavel')
+    Left = 336
+    Top = 40
+  end
+  object TFDTable_responsavel: TFDTable
+    IndexFieldNames = 'codigo'
+    Connection = FDConnection1
+    ResourceOptions.AssignedValues = [rvEscapeExpand]
+    TableName = 'TB_responsavel'
+    Left = 48
+    Top = 120
+    object TFDTable_responsavelcodigo: TFDAutoIncField
+      FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInWhere, pfInKey]
+      ReadOnly = False
+    end
+    object TFDTable_responsavelnome: TWideMemoField
+      FieldName = 'nome'
+      Origin = 'nome'
+      Required = True
+      BlobType = ftWideMemo
+    end
+  end
+  object DataSource1: TDataSource
+    DataSet = TFDTable_responsavel
+    Left = 488
+    Top = 40
+  end
+end
