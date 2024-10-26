@@ -12,90 +12,102 @@ object Form_setor: TForm_setor
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 224
-    Top = 120
+    Left = 264
+    Top = 136
     Width = 37
     Height = 15
     Caption = 'codigo'
     FocusControl = DBEdit1
   end
   object Label2: TLabel
-    Left = 224
-    Top = 168
+    Left = 264
+    Top = 184
     Width = 31
     Height = 15
     Caption = 'nome'
     FocusControl = DBMemo1
   end
   object Label3: TLabel
-    Left = 224
-    Top = 280
+    Left = 264
+    Top = 296
     Width = 104
     Height = 15
     Caption = 'responsavel_codigo'
     FocusControl = DBEdit2
   end
-  object Label4: TLabel
-    Left = 224
-    Top = 328
-    Width = 112
-    Height = 15
-    Caption = 'local_retirada_codigo'
-    FocusControl = DBEdit3
+  object ButtonAdicionar: TButton
+    Left = 182
+    Top = 500
+    Width = 75
+    Height = 25
+    Caption = 'Adicionar'
+    TabOrder = 0
+    OnClick = ButtonAdicionarClick
+  end
+  object ButtonExcluir: TButton
+    Left = 263
+    Top = 500
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 1
+    OnClick = ButtonExcluirClick
   end
   object DBEdit1: TDBEdit
-    Left = 224
-    Top = 139
+    Left = 264
+    Top = 152
     Width = 154
     Height = 23
     DataField = 'codigo'
     DataSource = DataSource1
-    TabOrder = 0
+    TabOrder = 2
   end
   object DBMemo1: TDBMemo
-    Left = 224
-    Top = 184
+    Left = 264
+    Top = 200
     Width = 185
     Height = 89
     DataField = 'nome'
     DataSource = DataSource1
-    TabOrder = 1
+    TabOrder = 3
   end
   object DBEdit2: TDBEdit
-    Left = 224
-    Top = 296
+    Left = 264
+    Top = 312
     Width = 154
     Height = 23
     DataField = 'responsavel_codigo'
     DataSource = DataSource1
-    TabOrder = 2
-  end
-  object DBEdit3: TDBEdit
-    Left = 224
-    Top = 349
-    Width = 154
-    Height = 23
-    DataField = 'local_retirada_codigo'
-    DataSource = DataSource1
-    TabOrder = 3
-  end
-  object ButtonAdicionar: TButton
-    Left = 214
-    Top = 388
-    Width = 75
-    Height = 25
-    Caption = 'Adicionar'
     TabOrder = 4
-    OnClick = ButtonAdicionarClick
   end
-  object ButtonExcluir: TButton
-    Left = 303
-    Top = 388
-    Width = 75
-    Height = 25
-    Caption = 'Excluir'
+  object DBGrid1: TDBGrid
+    Left = 160
+    Top = 352
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
     TabOrder = 5
-    OnClick = ButtonExcluirClick
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'responsavel_codigo'
+        Visible = True
+      end>
   end
   object DataSource1: TDataSource
     DataSet = TFDTable_setor
@@ -103,6 +115,7 @@ object Form_setor: TForm_setor
     Top = 16
   end
   object TFDTable_setor: TFDTable
+    Active = True
     IndexFieldNames = 'codigo'
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -111,24 +124,15 @@ object Form_setor: TForm_setor
     Top = 80
     object TFDTable_setorcodigo: TFDAutoIncField
       FieldName = 'codigo'
-      Origin = 'codigo'
-      ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = False
     end
     object TFDTable_setornome: TWideMemoField
       FieldName = 'nome'
-      Origin = 'nome'
       Required = True
       BlobType = ftWideMemo
     end
     object TFDTable_setorresponsavel_codigo: TIntegerField
       FieldName = 'responsavel_codigo'
-      Origin = 'responsavel_codigo'
-      Required = True
-    end
-    object TFDTable_setorlocal_retirada_codigo: TIntegerField
-      FieldName = 'local_retirada_codigo'
-      Origin = 'local_retirada_codigo'
       Required = True
     end
   end

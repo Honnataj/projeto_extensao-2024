@@ -18,34 +18,26 @@ type
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     FDConnection1: TFDConnection;
     FDLocalSQL1: TFDLocalSQL;
-    FDQuery1: TFDQuery;
-    DataSource1: TDataSource;
-    buttonAdicionar: TButton;
-    buttonAlterar: TButton;
-    buttonExcluir: TButton;
-    buttonSalvar: TButton;
     Button_responsavel: TButton;
     Button_setor: TButton;
+    Button_item: TButton;
+    Button_local_retirada: TButton;
+    Button_requerimento: TButton;
     procedure buttonAdicionarClick(Sender: TObject);
     procedure buttonAlterarClick(Sender: TObject);
     procedure buttonExcluirClick(Sender: TObject);
     procedure buttonSalvarClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
-    procedure DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
-      DataCol: Integer; Column: TColumn; State: TGridDrawState);
-    procedure TFDTable1valorVarcharGetText(Sender: TField; var Text: string;
-      DisplayText: Boolean);
     procedure Button_responsavelClick(Sender: TObject);
     procedure Button_setorClick(Sender: TObject);
+    procedure Button_itemClick(Sender: TObject);
+    procedure Button_local_retiradaClick(Sender: TObject);
+    procedure Button_requerimentoClick(Sender: TObject);
   private
     { Private declarations }
   public
     { Public declarations }
-  end;
-  Memo = class
-  public
-    procedure DBGridOnGetText(Sender: TField; var aText: string; DisplayText: boolean);
   end;
 
 var
@@ -55,12 +47,7 @@ implementation
 
 {$R *.dfm}
 
-uses Unit_item;
-procedure Memo.DBGridOnGetText(Sender: TField; var aText: string; DisplayText: Boolean);
-begin
-  if (DisplayText) then
-    aText := Sender.AsString;
-end;
+uses Unit_item, Unit_local_retirada, Unit_requerimento;
 
 procedure TForm1.buttonAdicionarClick(Sender: TObject); // RETIRAR
 begin
@@ -82,29 +69,32 @@ begin
   //TFDTable1.Post;
 end;
 
-procedure TForm1.Button_responsavelClick(Sender: TObject);
+procedure TForm1.Button_itemClick(Sender: TObject);
 begin
-try
-  Form_responsavel.ShowModal;
-finally
-  Form_responsavel.Free;
+  Form_item.Show;
 end;
 
+procedure TForm1.Button_local_retiradaClick(Sender: TObject);
+begin
+  Form_local_retirada.Show;
+end;
+
+procedure TForm1.Button_requerimentoClick(Sender: TObject);
+begin
+  Form_requerimento.Show;
+end;
+
+procedure TForm1.Button_responsavelClick(Sender: TObject);
+begin
+  Form_responsavel.Show;
 end;
 
 
 procedure TForm1.Button_setorClick(Sender: TObject);
 begin
-  Form_setor.SHOWMODAL;
+  Form_setor.Show;
 end;
 
-procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
-  DataCol: Integer; Column: TColumn; State: TGridDrawState);
-var
-  MemoFieldReveal: Memo;
-begin
-
-end;
 
 procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
@@ -116,10 +106,7 @@ begin
   //TFDTable1.Open();
 end;
 
-procedure TForm1.TFDTable1valorVarcharGetText(Sender: TField; var Text: string;
-  DisplayText: Boolean);
-begin
+
   //Text := Copy(TFDTable1valorVarchar.AsString, 1, 50);
-end;
 
 end.

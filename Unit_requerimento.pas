@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Vcl.ExtCtrls;
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
 
 type
   TForm_requerimento = class(TForm)
@@ -38,6 +38,11 @@ type
     DBEdit5: TDBEdit;
     Label8: TLabel;
     DBEdit6: TDBEdit;
+    ButtonAdicionar: TButton;
+    ButtonExcluir: TButton;
+    DBGrid1: TDBGrid;
+    procedure ButtonAdicionarClick(Sender: TObject);
+    procedure ButtonExcluirClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -50,5 +55,15 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm_requerimento.ButtonAdicionarClick(Sender: TObject);
+begin
+  TFDTable_requerimento.Append;
+end;
+
+procedure TForm_requerimento.ButtonExcluirClick(Sender: TObject);
+begin
+  TFDTable_requerimento.Delete;
+end;
 
 end.

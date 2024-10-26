@@ -2,7 +2,7 @@ object Form_local_retirada: TForm_local_retirada
   Left = 0
   Top = 0
   Caption = 'Form_local_retirada'
-  ClientHeight = 441
+  ClientHeight = 586
   ClientWidth = 624
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -12,24 +12,24 @@ object Form_local_retirada: TForm_local_retirada
   Font.Style = []
   TextHeight = 15
   object Label1: TLabel
-    Left = 288
-    Top = 232
+    Left = 222
+    Top = 192
     Width = 37
     Height = 15
     Caption = 'codigo'
     FocusControl = DBEdit1
   end
   object Label2: TLabel
-    Left = 288
-    Top = 280
+    Left = 222
+    Top = 240
     Width = 31
     Height = 15
     Caption = 'nome'
     FocusControl = DBMemo1
   end
   object DBEdit1: TDBEdit
-    Left = 288
-    Top = 248
+    Left = 222
+    Top = 208
     Width = 154
     Height = 23
     DataField = 'codigo'
@@ -37,15 +37,58 @@ object Form_local_retirada: TForm_local_retirada
     TabOrder = 0
   end
   object DBMemo1: TDBMemo
-    Left = 288
-    Top = 296
+    Left = 222
+    Top = 256
     Width = 185
     Height = 89
     DataField = 'nome'
     DataSource = DataSource1
     TabOrder = 1
   end
+  object ButtonAdicionar: TButton
+    Left = 222
+    Top = 391
+    Width = 75
+    Height = 25
+    Caption = 'Adicionar'
+    TabOrder = 2
+    OnClick = ButtonAdicionarClick
+  end
+  object ButtonExcluir: TButton
+    Left = 318
+    Top = 391
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 3
+    OnClick = ButtonExcluirClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 160
+    Top = 440
+    Width = 320
+    Height = 120
+    DataSource = DataSource1
+    TabOrder = 4
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'nome'
+        Visible = True
+      end>
+  end
   object TFDTable_local_retirada: TFDTable
+    Active = True
     IndexFieldNames = 'codigo'
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]

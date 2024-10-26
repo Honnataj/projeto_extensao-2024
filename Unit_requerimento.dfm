@@ -2,8 +2,8 @@ object Form_requerimento: TForm_requerimento
   Left = 0
   Top = 0
   Caption = 'Form_requerimento'
-  ClientHeight = 731
-  ClientWidth = 644
+  ClientHeight = 893
+  ClientWidth = 914
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -147,7 +147,39 @@ object Form_requerimento: TForm_requerimento
     DataSource = DataSource1
     TabOrder = 7
   end
+  object ButtonAdicionar: TButton
+    Left = 240
+    Top = 668
+    Width = 75
+    Height = 25
+    Caption = 'Adicionar'
+    TabOrder = 8
+    OnClick = ButtonAdicionarClick
+  end
+  object ButtonExcluir: TButton
+    Left = 331
+    Top = 668
+    Width = 75
+    Height = 25
+    Caption = 'Excluir'
+    TabOrder = 9
+    OnClick = ButtonExcluirClick
+  end
+  object DBGrid1: TDBGrid
+    Left = 20
+    Top = 727
+    Width = 837
+    Height = 135
+    DataSource = DataSource1
+    TabOrder = 10
+    TitleFont.Charset = DEFAULT_CHARSET
+    TitleFont.Color = clWindowText
+    TitleFont.Height = -12
+    TitleFont.Name = 'Segoe UI'
+    TitleFont.Style = []
+  end
   object TFDTable_requerimento: TFDTable
+    Active = True
     IndexFieldNames = 'codigo'
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
