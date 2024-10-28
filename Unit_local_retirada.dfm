@@ -11,14 +11,6 @@ object Form_local_retirada: TForm_local_retirada
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
-    Left = 222
-    Top = 192
-    Width = 37
-    Height = 15
-    Caption = 'codigo'
-    FocusControl = DBEdit1
-  end
   object Label2: TLabel
     Left = 222
     Top = 240
@@ -27,15 +19,6 @@ object Form_local_retirada: TForm_local_retirada
     Caption = 'nome'
     FocusControl = DBMemo1
   end
-  object DBEdit1: TDBEdit
-    Left = 222
-    Top = 208
-    Width = 154
-    Height = 23
-    DataField = 'codigo'
-    DataSource = DataSource1
-    TabOrder = 0
-  end
   object DBMemo1: TDBMemo
     Left = 222
     Top = 256
@@ -43,7 +26,7 @@ object Form_local_retirada: TForm_local_retirada
     Height = 89
     DataField = 'nome'
     DataSource = DataSource1
-    TabOrder = 1
+    TabOrder = 0
   end
   object ButtonAdicionar: TButton
     Left = 222
@@ -51,7 +34,7 @@ object Form_local_retirada: TForm_local_retirada
     Width = 75
     Height = 25
     Caption = 'Adicionar'
-    TabOrder = 2
+    TabOrder = 1
     OnClick = ButtonAdicionarClick
   end
   object ButtonExcluir: TButton
@@ -60,7 +43,7 @@ object Form_local_retirada: TForm_local_retirada
     Width = 75
     Height = 25
     Caption = 'Excluir'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = ButtonExcluirClick
   end
   object DBGrid1: TDBGrid
@@ -69,7 +52,7 @@ object Form_local_retirada: TForm_local_retirada
     Width = 320
     Height = 120
     DataSource = DataSource1
-    TabOrder = 4
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

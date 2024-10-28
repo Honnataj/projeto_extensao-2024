@@ -11,14 +11,6 @@ object Form_requerimento: TForm_requerimento
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
-    Left = 240
-    Top = 144
-    Width = 37
-    Height = 15
-    Caption = 'codigo'
-    FocusControl = DBEdit1
-  end
   object Label2: TLabel
     Left = 240
     Top = 192
@@ -75,15 +67,6 @@ object Form_requerimento: TForm_requerimento
     Caption = 'setor_codigo'
     FocusControl = DBEdit6
   end
-  object DBEdit1: TDBEdit
-    Left = 240
-    Top = 160
-    Width = 154
-    Height = 23
-    DataField = 'codigo'
-    DataSource = DataSource1
-    TabOrder = 0
-  end
   object DBMemo1: TDBMemo
     Left = 240
     Top = 208
@@ -91,7 +74,7 @@ object Form_requerimento: TForm_requerimento
     Height = 89
     DataField = 'data_requerimento'
     DataSource = DataSource1
-    TabOrder = 1
+    TabOrder = 0
   end
   object DBEdit2: TDBEdit
     Left = 240
@@ -100,7 +83,7 @@ object Form_requerimento: TForm_requerimento
     Height = 23
     DataField = 'quantidade'
     DataSource = DataSource1
-    TabOrder = 2
+    TabOrder = 1
   end
   object DBEdit3: TDBEdit
     Left = 240
@@ -109,7 +92,7 @@ object Form_requerimento: TForm_requerimento
     Height = 23
     DataField = 'requerente_responsavel_codigo'
     DataSource = DataSource1
-    TabOrder = 3
+    TabOrder = 2
   end
   object DBMemo2: TDBMemo
     Left = 240
@@ -118,7 +101,7 @@ object Form_requerimento: TForm_requerimento
     Height = 89
     DataField = 'requerente_nao_responsavel'
     DataSource = DataSource1
-    TabOrder = 4
+    TabOrder = 3
   end
   object DBEdit4: TDBEdit
     Left = 240
@@ -127,7 +110,7 @@ object Form_requerimento: TForm_requerimento
     Height = 23
     DataField = 'item_codigo'
     DataSource = DataSource1
-    TabOrder = 5
+    TabOrder = 4
   end
   object DBEdit5: TDBEdit
     Left = 240
@@ -136,7 +119,7 @@ object Form_requerimento: TForm_requerimento
     Height = 23
     DataField = 'local_retirada_codigo'
     DataSource = DataSource1
-    TabOrder = 6
+    TabOrder = 5
   end
   object DBEdit6: TDBEdit
     Left = 240
@@ -145,7 +128,7 @@ object Form_requerimento: TForm_requerimento
     Height = 23
     DataField = 'setor_codigo'
     DataSource = DataSource1
-    TabOrder = 7
+    TabOrder = 6
   end
   object ButtonAdicionar: TButton
     Left = 240
@@ -153,7 +136,7 @@ object Form_requerimento: TForm_requerimento
     Width = 75
     Height = 25
     Caption = 'Adicionar'
-    TabOrder = 8
+    TabOrder = 7
     OnClick = ButtonAdicionarClick
   end
   object ButtonExcluir: TButton
@@ -162,7 +145,7 @@ object Form_requerimento: TForm_requerimento
     Width = 75
     Height = 25
     Caption = 'Excluir'
-    TabOrder = 9
+    TabOrder = 8
     OnClick = ButtonExcluirClick
   end
   object DBGrid1: TDBGrid
@@ -171,7 +154,7 @@ object Form_requerimento: TForm_requerimento
     Width = 837
     Height = 135
     DataSource = DataSource1
-    TabOrder = 10
+    TabOrder = 9
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

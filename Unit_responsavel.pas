@@ -12,10 +12,7 @@ uses
 
 type
   TForm_responsavel = class(TForm)
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
     DataSource1: TDataSource;
-    Label2: TLabel;
     DBMemo1: TDBMemo;
     DBGrid1: TDBGrid;
     ButtonAdicionar: TButton;
@@ -23,6 +20,7 @@ type
     TFDTable_responsavel: TFDTable;
     TFDTable_responsavelcodigo: TFDAutoIncField;
     TFDTable_responsavelnome: TWideMemoField;
+    Label2: TLabel;
     procedure ButtonAdicionarClick(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
     procedure FormCreate(Sender: TObject);

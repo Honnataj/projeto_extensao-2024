@@ -19,8 +19,6 @@ type
     TFDTable_setorcodigo: TFDAutoIncField;
     TFDTable_setornome: TWideMemoField;
     TFDTable_setorresponsavel_codigo: TIntegerField;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
     Label2: TLabel;
     DBMemo1: TDBMemo;
     Label3: TLabel;

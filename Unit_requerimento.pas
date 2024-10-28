@@ -21,8 +21,6 @@ type
     TFDTable_requerimentoitem_codigo: TIntegerField;
     TFDTable_requerimentolocal_retirada_codigo: TIntegerField;
     TFDTable_requerimentosetor_codigo: TIntegerField;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
     DataSource1: TDataSource;
     Label2: TLabel;
     DBMemo1: TDBMemo;

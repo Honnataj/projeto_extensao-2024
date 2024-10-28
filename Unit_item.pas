@@ -20,8 +20,6 @@ type
     ButtonExcluir: TButton;
     DBGrid1: TDBGrid;
     TFDTable_itemlocal_retirada_codigo: TIntegerField;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
     Label2: TLabel;
     DBMemo1: TDBMemo;
     Label3: TLabel;

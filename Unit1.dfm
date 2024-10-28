@@ -14,8 +14,8 @@ object Form1: TForm1
   OnCreate = FormCreate
   TextHeight = 15
   object Button_responsavel: TButton
-    Left = 200
-    Top = 175
+    Left = 24
+    Top = 207
     Width = 195
     Height = 25
     Caption = 'Cadastro de respons'#225'vel por setor'
@@ -23,8 +23,8 @@ object Form1: TForm1
     OnClick = Button_responsavelClick
   end
   object Button_setor: TButton
-    Left = 200
-    Top = 206
+    Left = 24
+    Top = 238
     Width = 195
     Height = 25
     Caption = 'Cadastro de setor'
@@ -32,8 +32,8 @@ object Form1: TForm1
     OnClick = Button_setorClick
   end
   object Button_item: TButton
-    Left = 200
-    Top = 237
+    Left = 24
+    Top = 269
     Width = 195
     Height = 25
     Caption = 'Cadastro de item'
@@ -41,8 +41,8 @@ object Form1: TForm1
     OnClick = Button_itemClick
   end
   object Button_local_retirada: TButton
-    Left = 200
-    Top = 268
+    Left = 24
+    Top = 300
     Width = 195
     Height = 25
     Caption = 'Cadastro de local de retirada'
@@ -50,10 +50,10 @@ object Form1: TForm1
     OnClick = Button_local_retiradaClick
   end
   object Button_requerimento: TButton
-    Left = 200
-    Top = 299
-    Width = 195
-    Height = 25
+    Left = 320
+    Top = 207
+    Width = 281
+    Height = 118
     Caption = 'Cadastro de requerimento'
     TabOrder = 4
     OnClick = Button_requerimentoClick

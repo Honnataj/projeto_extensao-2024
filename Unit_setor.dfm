@@ -11,14 +11,6 @@ object Form_setor: TForm_setor
   Font.Name = 'Segoe UI'
   Font.Style = []
   TextHeight = 15
-  object Label1: TLabel
-    Left = 264
-    Top = 136
-    Width = 37
-    Height = 15
-    Caption = 'codigo'
-    FocusControl = DBEdit1
-  end
   object Label2: TLabel
     Left = 264
     Top = 184
@@ -53,15 +45,6 @@ object Form_setor: TForm_setor
     TabOrder = 1
     OnClick = ButtonExcluirClick
   end
-  object DBEdit1: TDBEdit
-    Left = 264
-    Top = 152
-    Width = 154
-    Height = 23
-    DataField = 'codigo'
-    DataSource = DataSource1
-    TabOrder = 2
-  end
   object DBMemo1: TDBMemo
     Left = 264
     Top = 200
@@ -69,7 +52,7 @@ object Form_setor: TForm_setor
     Height = 89
     DataField = 'nome'
     DataSource = DataSource1
-    TabOrder = 3
+    TabOrder = 2
   end
   object DBEdit2: TDBEdit
     Left = 264
@@ -78,7 +61,7 @@ object Form_setor: TForm_setor
     Height = 23
     DataField = 'responsavel_codigo'
     DataSource = DataSource1
-    TabOrder = 4
+    TabOrder = 3
   end
   object DBGrid1: TDBGrid
     Left = 160
@@ -86,7 +69,7 @@ object Form_setor: TForm_setor
     Width = 320
     Height = 120
     DataSource = DataSource1
-    TabOrder = 5
+    TabOrder = 4
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12

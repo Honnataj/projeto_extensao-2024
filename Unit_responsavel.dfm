@@ -13,14 +13,6 @@ object Form_responsavel: TForm_responsavel
   OnClose = FormClose
   OnCreate = FormCreate
   TextHeight = 15
-  object Label1: TLabel
-    Left = 192
-    Top = 64
-    Width = 37
-    Height = 15
-    Caption = 'codigo'
-    FocusControl = DBEdit1
-  end
   object Label2: TLabel
     Left = 192
     Top = 112
@@ -29,15 +21,6 @@ object Form_responsavel: TForm_responsavel
     Caption = 'nome'
     FocusControl = DBMemo1
   end
-  object DBEdit1: TDBEdit
-    Left = 192
-    Top = 83
-    Width = 154
-    Height = 23
-    DataField = 'codigo'
-    DataSource = DataSource1
-    TabOrder = 0
-  end
   object DBMemo1: TDBMemo
     Left = 192
     Top = 128
@@ -45,7 +28,7 @@ object Form_responsavel: TForm_responsavel
     Height = 89
     DataField = 'nome'
     DataSource = DataSource1
-    TabOrder = 1
+    TabOrder = 0
   end
   object DBGrid1: TDBGrid
     Left = 136
@@ -53,7 +36,7 @@ object Form_responsavel: TForm_responsavel
     Width = 320
     Height = 120
     DataSource = DataSource1
-    TabOrder = 2
+    TabOrder = 1
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -77,7 +60,7 @@ object Form_responsavel: TForm_responsavel
     Width = 75
     Height = 25
     Caption = 'Adicionar'
-    TabOrder = 3
+    TabOrder = 2
     OnClick = ButtonAdicionarClick
   end
   object ButtonExcluir: TButton
@@ -86,7 +69,7 @@ object Form_responsavel: TForm_responsavel
     Width = 75
     Height = 25
     Caption = 'Excluir'
-    TabOrder = 4
+    TabOrder = 3
     OnClick = ButtonExcluirClick
   end
   object DataSource1: TDataSource

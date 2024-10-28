@@ -15,8 +15,6 @@ type
     TFDTable_local_retirada: TFDTable;
     TFDTable_local_retiradacodigo: TFDAutoIncField;
     TFDTable_local_retiradanome: TWideMemoField;
-    Label1: TLabel;
-    DBEdit1: TDBEdit;
     DataSource1: TDataSource;
     Label2: TLabel;
     DBMemo1: TDBMemo;
