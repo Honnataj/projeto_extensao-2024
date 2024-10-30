@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.ComCtrls;
 
 type
   TForm_requerimento = class(TForm)
@@ -23,24 +23,21 @@ type
     TFDTable_requerimentosetor_codigo: TIntegerField;
     DataSource1: TDataSource;
     Label2: TLabel;
-    DBMemo1: TDBMemo;
     Label3: TLabel;
     DBEdit2: TDBEdit;
-    Label4: TLabel;
-    DBEdit3: TDBEdit;
-    Label5: TLabel;
-    DBMemo2: TDBMemo;
     Label6: TLabel;
-    DBEdit4: TDBEdit;
     Label7: TLabel;
-    DBEdit5: TDBEdit;
     Label8: TLabel;
-    DBEdit6: TDBEdit;
     ButtonAdicionar: TButton;
     ButtonExcluir: TButton;
-    DBGrid1: TDBGrid;
+    DateTimePicker1: TDateTimePicker;
+    ComboBox_item: TComboBox;
+    ComboBox2: TComboBox;
+    ComboBox3: TComboBox;
     procedure ButtonAdicionarClick(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
+    procedure TFDTable_requerimentodata_requerimentoGetText(Sender: TField;
+      var Text: string; DisplayText: Boolean);
   private
     { Private declarations }
   public
@@ -62,6 +59,12 @@ end;
 procedure TForm_requerimento.ButtonExcluirClick(Sender: TObject);
 begin
   TFDTable_requerimento.Delete;
+end;
+
+procedure TForm_requerimento.TFDTable_requerimentodata_requerimentoGetText(
+  Sender: TField; var Text: string; DisplayText: Boolean);
+begin
+  Text := Copy(TFDTable_requerimentodata_requerimento.AsString, 1, 50);
 end;
 
 end.

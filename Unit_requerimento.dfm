@@ -2,9 +2,9 @@ object Form_requerimento: TForm_requerimento
   Left = 0
   Top = 0
   Caption = 'Form_requerimento'
-  ClientHeight = 893
-  ClientWidth = 914
-  Color = clBtnFace
+  ClientHeight = 615
+  ClientWidth = 921
+  Color = clCream
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
   Font.Height = -12
@@ -12,154 +12,112 @@ object Form_requerimento: TForm_requerimento
   Font.Style = []
   TextHeight = 15
   object Label2: TLabel
-    Left = 240
-    Top = 192
+    Left = 360
+    Top = 64
     Width = 100
     Height = 15
     Caption = 'data_requerimento'
-    FocusControl = DBMemo1
   end
   object Label3: TLabel
-    Left = 240
-    Top = 304
+    Left = 360
+    Top = 120
     Width = 60
     Height = 15
     Caption = 'quantidade'
     FocusControl = DBEdit2
   end
-  object Label4: TLabel
-    Left = 240
-    Top = 352
-    Width = 166
-    Height = 15
-    Caption = 'requerente_responsavel_codigo'
-    FocusControl = DBEdit3
-  end
-  object Label5: TLabel
-    Left = 240
-    Top = 400
-    Width = 149
-    Height = 15
-    Caption = 'requerente_nao_responsavel'
-    FocusControl = DBMemo2
-  end
   object Label6: TLabel
-    Left = 240
-    Top = 512
-    Width = 66
+    Left = 360
+    Top = 184
+    Width = 24
     Height = 15
-    Caption = 'item_codigo'
-    FocusControl = DBEdit4
+    Caption = 'item'
   end
   object Label7: TLabel
-    Left = 240
-    Top = 560
-    Width = 112
+    Left = 360
+    Top = 232
+    Width = 88
     Height = 15
-    Caption = 'local_retirada_codigo'
-    FocusControl = DBEdit5
+    Caption = 'local de retirada'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Label7'
+    Font.Style = []
+    ParentFont = False
   end
   object Label8: TLabel
-    Left = 240
-    Top = 608
-    Width = 68
+    Left = 360
+    Top = 280
+    Width = 26
     Height = 15
-    Caption = 'setor_codigo'
-    FocusControl = DBEdit6
+    Caption = 'setor'
   end
-  object DBMemo1: TDBMemo
-    Left = 240
-    Top = 208
-    Width = 185
-    Height = 89
-    DataField = 'data_requerimento'
+  object DBEdit2: TDBEdit
+    Left = 360
+    Top = 141
+    Width = 145
+    Height = 20
+    DataField = 'quantidade'
     DataSource = DataSource1
     TabOrder = 0
   end
-  object DBEdit2: TDBEdit
-    Left = 240
-    Top = 320
-    Width = 154
-    Height = 23
-    DataField = 'quantidade'
-    DataSource = DataSource1
-    TabOrder = 1
-  end
-  object DBEdit3: TDBEdit
-    Left = 240
-    Top = 368
-    Width = 154
-    Height = 23
-    DataField = 'requerente_responsavel_codigo'
-    DataSource = DataSource1
-    TabOrder = 2
-  end
-  object DBMemo2: TDBMemo
-    Left = 240
-    Top = 416
-    Width = 185
-    Height = 89
-    DataField = 'requerente_nao_responsavel'
-    DataSource = DataSource1
-    TabOrder = 3
-  end
-  object DBEdit4: TDBEdit
-    Left = 240
-    Top = 528
-    Width = 154
-    Height = 23
-    DataField = 'item_codigo'
-    DataSource = DataSource1
-    TabOrder = 4
-  end
-  object DBEdit5: TDBEdit
-    Left = 240
-    Top = 576
-    Width = 154
-    Height = 23
-    DataField = 'local_retirada_codigo'
-    DataSource = DataSource1
-    TabOrder = 5
-  end
-  object DBEdit6: TDBEdit
-    Left = 240
-    Top = 624
-    Width = 154
-    Height = 23
-    DataField = 'setor_codigo'
-    DataSource = DataSource1
-    TabOrder = 6
-  end
   object ButtonAdicionar: TButton
-    Left = 240
-    Top = 668
+    Left = 344
+    Top = 340
     Width = 75
     Height = 25
     Caption = 'Adicionar'
-    TabOrder = 7
+    TabOrder = 1
     OnClick = ButtonAdicionarClick
   end
   object ButtonExcluir: TButton
-    Left = 331
-    Top = 668
+    Left = 443
+    Top = 340
     Width = 75
     Height = 25
     Caption = 'Excluir'
-    TabOrder = 8
+    TabOrder = 2
     OnClick = ButtonExcluirClick
   end
-  object DBGrid1: TDBGrid
-    Left = 20
-    Top = 727
-    Width = 837
-    Height = 135
-    DataSource = DataSource1
-    TabOrder = 9
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
+  object DateTimePicker1: TDateTimePicker
+    Left = 360
+    Top = 85
+    Width = 145
+    Height = 29
+    Date = 45595.000000000000000000
+    Time = 0.595466342594591000
+    TabOrder = 3
+  end
+  object ComboBox_item: TComboBox
+    Left = 360
+    Top = 205
+    Width = 145
+    Height = 23
+    TabOrder = 4
+    Text = 'Detergente'
+  end
+  object ComboBox2: TComboBox
+    Left = 360
+    Top = 253
+    Width = 145
+    Height = 23
+    TabOrder = 5
+    Text = 'Produtos de limpeza'
+  end
+  object ComboBox3: TComboBox
+    Left = 360
+    Top = 301
+    Width = 145
+    Height = 23
+    TabOrder = 6
+    Items.Strings = (
+      'Camarote Brahma'
+      'Camarote da Gente'
+      'Camarote Super Bull'
+      'Parque do Pe'#227'ozinho'
+      'Setor Administrativo'
+      'Setor Financeiro')
   end
   object TFDTable_requerimento: TFDTable
     Active = True
@@ -167,8 +125,8 @@ object Form_requerimento: TForm_requerimento
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'TB_requerimento'
-    Left = 432
-    Top = 32
+    Left = 832
+    Top = 280
     object TFDTable_requerimentocodigo: TFDAutoIncField
       FieldName = 'codigo'
       Origin = 'codigo'
@@ -179,6 +137,7 @@ object Form_requerimento: TForm_requerimento
       FieldName = 'data_requerimento'
       Origin = 'data_requerimento'
       Required = True
+      OnGetText = TFDTable_requerimentodata_requerimentoGetText
       BlobType = ftWideMemo
     end
     object TFDTable_requerimentoquantidade: TIntegerField
@@ -213,7 +172,7 @@ object Form_requerimento: TForm_requerimento
   end
   object DataSource1: TDataSource
     DataSet = TFDTable_requerimento
-    Left = 544
-    Top = 32
+    Left = 832
+    Top = 224
   end
 end

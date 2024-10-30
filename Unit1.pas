@@ -11,7 +11,8 @@ uses
   FireDAC.Phys.SQLite, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
   FireDAC.Phys.SQLiteVDataSet, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, Vcl.Grids, Vcl.DBGrids,
-  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Unit_responsavel, Unit_setor;
+  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Unit_responsavel, Unit_setor,
+  Vcl.Imaging.pngimage;
 
 type
   TForm1 = class(TForm)
@@ -23,6 +24,7 @@ type
     Button_item: TButton;
     Button_local_retirada: TButton;
     Button_requerimento: TButton;
+    ImagePeao: TImage;
     procedure buttonAdicionarClick(Sender: TObject);
     procedure buttonAlterarClick(Sender: TObject);
     procedure buttonExcluirClick(Sender: TObject);
@@ -34,6 +36,7 @@ type
     procedure Button_itemClick(Sender: TObject);
     procedure Button_local_retiradaClick(Sender: TObject);
     procedure Button_requerimentoClick(Sender: TObject);
+    procedure ImagePeaoClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -107,6 +110,11 @@ begin
 end;
 
 
-  //Text := Copy(TFDTable1valorVarchar.AsString, 1, 50);
+  procedure TForm1.ImagePeaoClick(Sender: TObject);
+begin
+
+end;
+
+//Text := Copy(TFDTable1valorVarchar.AsString, 1, 50);
 
 end.

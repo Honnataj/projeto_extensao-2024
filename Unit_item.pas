@@ -20,12 +20,14 @@ type
     ButtonExcluir: TButton;
     DBGrid1: TDBGrid;
     TFDTable_itemlocal_retirada_codigo: TIntegerField;
-    Label2: TLabel;
+    nomeEdit: TLabel;
     DBMemo1: TDBMemo;
     Label3: TLabel;
-    DBEdit2: TDBEdit;
+    ComboBox1: TComboBox;
     procedure ButtonAdicionarClick(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
+    procedure TFDTable_itemnomeGetText(Sender: TField; var Text: string;
+      DisplayText: Boolean);
   private
     { Private declarations }
   public
@@ -47,6 +49,12 @@ end;
 procedure TForm_item.ButtonExcluirClick(Sender: TObject);
 begin
   TFDTable_item.Delete;
+end;
+
+procedure TForm_item.TFDTable_itemnomeGetText(Sender: TField; var Text: string;
+  DisplayText: Boolean);
+begin
+  Text := Copy(TFDTable_itemnome.AsString, 1, 50);
 end;
 
 end.
