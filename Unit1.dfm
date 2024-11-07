@@ -59,8 +59,8 @@ object Form1: TForm1
     OnClick = Button_requerimentoClick
   end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 40
-    Top = 40
+    Left = 48
+    Top = 48
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -70,8 +70,8 @@ object Form1: TForm1
       'DriverID=SQLite')
     Connected = True
     LoginPrompt = False
-    Left = 152
-    Top = 40
+    Left = 160
+    Top = 56
   end
   object FDLocalSQL1: TFDLocalSQL
     Connection = FDConnection1

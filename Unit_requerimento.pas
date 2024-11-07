@@ -39,8 +39,11 @@ type
     ButtonAdicionar: TButton;
     ButtonExcluir: TButton;
     DBGrid1: TDBGrid;
+    Button1: TButton;
+    FDQuery1: TFDQuery;
     procedure ButtonAdicionarClick(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -53,6 +56,17 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm_requerimento.Button1Click(Sender: TObject);
+begin
+  with FDQuery1.SQL do begin
+    FDQuery1.SQL.Clear;
+    FDQuery1.SQL.Add('INSERT INTO TB_requerimento VALUES (null, ''2024-11-07'', 3, 8,' +
+            'null, 1, 1, 1);');
+  end;
+  FDQuery1.Open;
+  FDQuery1.NextRecordSet;
+end;
 
 procedure TForm_requerimento.ButtonAdicionarClick(Sender: TObject);
 begin

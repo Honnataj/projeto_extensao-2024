@@ -161,6 +161,15 @@ object Form_requerimento: TForm_requerimento
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
+  object Button1: TButton
+    Left = 608
+    Top = 367
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 10
+    OnClick = Button1Click
+  end
   object TFDTable_requerimento: TFDTable
     Active = True
     IndexFieldNames = 'codigo'
@@ -215,5 +224,12 @@ object Form_requerimento: TForm_requerimento
     DataSet = TFDTable_requerimento
     Left = 544
     Top = 32
+  end
+  object FDQuery1: TFDQuery
+    Connection = Form1.FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM TB_requerimento')
+    Left = 616
+    Top = 88
   end
 end

@@ -80,8 +80,15 @@ begin
 end;
 
 procedure TForm1.Button_requerimentoClick(Sender: TObject);
+var
+  LForm_requerimento : TForm_requerimento;
 begin
-  Form_requerimento.Show;
+  LForm_requerimento := TForm_requerimento.Create(nil);
+  try
+    LForm_requerimento.ShowModal;
+  finally
+    LForm_requerimento.Free;
+  end;
 end;
 
 procedure TForm1.Button_responsavelClick(Sender: TObject);
