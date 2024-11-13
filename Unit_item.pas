@@ -24,8 +24,11 @@ type
     DBMemo1: TDBMemo;
     Label3: TLabel;
     DBEdit2: TDBEdit;
+    Button1: TButton;
+    FDQuery1: TFDQuery;
     procedure ButtonAdicionarClick(Sender: TObject);
     procedure ButtonExcluirClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -38,6 +41,14 @@ var
 implementation
 
 {$R *.dfm}
+
+procedure TForm_item.Button1Click(Sender: TObject);
+begin
+  with FDQuery1.SQL do begin
+    FDQuery1.SQL.Clear;
+    FDQuery1.SQL.Add('INSERT INTO TB_item VALUES (null, ''Nome111'', 8);');
+  end;
+end;
 
 procedure TForm_item.ButtonAdicionarClick(Sender: TObject);
 begin

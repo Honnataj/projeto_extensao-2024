@@ -76,8 +76,16 @@ object Form_item: TForm_item
     DataSource = DataSource1
     TabOrder = 4
   end
+  object Button1: TButton
+    Left = 488
+    Top = 248
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
   object TFDTable_item: TFDTable
-    Active = True
     IndexFieldNames = 'codigo'
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
@@ -106,5 +114,10 @@ object Form_item: TForm_item
     DataSet = TFDTable_item
     Left = 568
     Top = 16
+  end
+  object FDQuery1: TFDQuery
+    Connection = Form1.FDConnection1
+    Left = 520
+    Top = 128
   end
 end

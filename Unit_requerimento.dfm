@@ -160,6 +160,47 @@ object Form_requerimento: TForm_requerimento
     TitleFont.Height = -12
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
+    Columns = <
+      item
+        Expanded = False
+        FieldName = 'codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'data_requerimento'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'quantidade'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'requerente_responsavel_codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'requerente_nao_responsavel'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'item_codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'local_retirada_codigo'
+        Visible = True
+      end
+      item
+        Expanded = False
+        FieldName = 'setor_codigo'
+        Visible = True
+      end>
   end
   object Button1: TButton
     Left = 608
@@ -171,7 +212,6 @@ object Form_requerimento: TForm_requerimento
     OnClick = Button1Click
   end
   object TFDTable_requerimento: TFDTable
-    Active = True
     IndexFieldNames = 'codigo'
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]

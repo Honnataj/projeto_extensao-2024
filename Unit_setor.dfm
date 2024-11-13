@@ -10,6 +10,7 @@ object Form_setor: TForm_setor
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnActivate = FormActivate
   TextHeight = 15
   object Label2: TLabel
     Left = 264
@@ -92,6 +93,23 @@ object Form_setor: TForm_setor
         Visible = True
       end>
   end
+  object Button1: TButton
+    Left = 136
+    Top = 184
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
+  object ComboBox1: TComboBox
+    Left = 456
+    Top = 293
+    Width = 145
+    Height = 23
+    TabOrder = 6
+    Text = 'ComboBox1'
+  end
   object DataSource1: TDataSource
     DataSet = TFDTable_setor
     Left = 552
@@ -107,16 +125,27 @@ object Form_setor: TForm_setor
     Top = 80
     object TFDTable_setorcodigo: TFDAutoIncField
       FieldName = 'codigo'
+      Origin = 'codigo'
+      ProviderFlags = [pfInWhere, pfInKey]
       ReadOnly = False
     end
     object TFDTable_setornome: TWideMemoField
       FieldName = 'nome'
+      Origin = 'nome'
       Required = True
       BlobType = ftWideMemo
     end
     object TFDTable_setorresponsavel_codigo: TIntegerField
       FieldName = 'responsavel_codigo'
+      Origin = 'responsavel_codigo'
       Required = True
     end
+  end
+  object FDQuery1: TFDQuery
+    Connection = Form1.FDConnection1
+    SQL.Strings = (
+      'SELECT * FROM TB_setor')
+    Left = 536
+    Top = 160
   end
 end

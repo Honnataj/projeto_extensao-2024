@@ -70,6 +70,15 @@ object Form_local_retirada: TForm_local_retirada
         Visible = True
       end>
   end
+  object Button1: TButton
+    Left = 512
+    Top = 416
+    Width = 75
+    Height = 25
+    Caption = 'Button1'
+    TabOrder = 4
+    OnClick = Button1Click
+  end
   object TFDTable_local_retirada: TFDTable
     Active = True
     IndexFieldNames = 'codigo'
@@ -95,5 +104,10 @@ object Form_local_retirada: TForm_local_retirada
     DataSet = TFDTable_local_retirada
     Left = 336
     Top = 56
+  end
+  object FDQuery1: TFDQuery
+    Connection = Form1.FDConnection1
+    Left = 480
+    Top = 280
   end
 end
