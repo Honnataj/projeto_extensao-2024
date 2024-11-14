@@ -14,7 +14,7 @@ uses
   Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Unit_responsavel, Unit_setor;
 
 type
-  TForm1 = class(TForm)
+  TFormularioPrincipal = class(TForm)
     FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink;
     FDConnection1: TFDConnection;
     FDLocalSQL1: TFDLocalSQL;
@@ -23,6 +23,7 @@ type
     Button_item: TButton;
     Button_local_retirada: TButton;
     Button_requerimento: TButton;
+    Button_ExportExcel: TButton;
     procedure buttonAdicionarClick(Sender: TObject);
     procedure buttonAlterarClick(Sender: TObject);
     procedure buttonExcluirClick(Sender: TObject);
@@ -34,6 +35,7 @@ type
     procedure Button_local_retiradaClick(Sender: TObject);
     procedure Button_requerimentoClick(Sender: TObject);
     procedure Button_setorClick(Sender: TObject);
+    procedure Button_ExportExcelClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -41,35 +43,47 @@ type
   end;
 
 var
-  Form1: TForm1;
+  FormularioPrincipal: TFormularioPrincipal;
 
 implementation
 
 {$R *.dfm}
 
-uses Unit_item, Unit_local_retirada, Unit_requerimento;
+uses Unit_item, Unit_local_retirada, Unit_requerimento,Unit_excel;
 
-procedure TForm1.buttonAdicionarClick(Sender: TObject); // RETIRAR
+procedure TFormularioPrincipal.Button_ExportExcelClick(Sender: TObject);
+var
+  LForm_excel : TForm2;
+begin
+  LForm_excel := TForm2.Create(nil);
+  try
+    LForm_excel.ShowModal;
+  finally
+    LForm_excel.Free;
+  end;
+end;
+
+procedure TFormularioPrincipal.buttonAdicionarClick(Sender: TObject); // RETIRAR
 begin
   //TFDTable_responsavel.Append;
 end;
 
-procedure TForm1.buttonAlterarClick(Sender: TObject);
+procedure TFormularioPrincipal.buttonAlterarClick(Sender: TObject);
 begin
   //TFDTable1.Edit;
 end;
 
-procedure TForm1.buttonExcluirClick(Sender: TObject);
+procedure TFormularioPrincipal.buttonExcluirClick(Sender: TObject);
 begin
   //TFDTable1.Delete;
 end;
 
-procedure TForm1.buttonSalvarClick(Sender: TObject);
+procedure TFormularioPrincipal.buttonSalvarClick(Sender: TObject);
 begin
   //TFDTable1.Post;
 end;
 
-procedure TForm1.Button_itemClick(Sender: TObject);
+procedure TFormularioPrincipal.Button_itemClick(Sender: TObject);
 var
   LForm_item : TForm_item;
 begin
@@ -81,7 +95,7 @@ begin
   end;
 end;
 
-procedure TForm1.Button_local_retiradaClick(Sender: TObject);
+procedure TFormularioPrincipal.Button_local_retiradaClick(Sender: TObject);
 var
   LForm_local_retirada : TForm_local_retirada;
 begin
@@ -93,7 +107,7 @@ begin
   end;
 end;
 
-procedure TForm1.Button_requerimentoClick(Sender: TObject);
+procedure TFormularioPrincipal.Button_requerimentoClick(Sender: TObject);
 var
   LForm_requerimento : TForm_requerimento;
 begin
@@ -105,7 +119,7 @@ begin
   end;
 end;
 
-procedure TForm1.Button_responsavelClick(Sender: TObject);
+procedure TFormularioPrincipal.Button_responsavelClick(Sender: TObject);
 var
   LForm_responsavel : TForm_responsavel;
 begin
@@ -117,7 +131,7 @@ begin
   end;
 end;
 
-procedure TForm1.Button_setorClick(Sender: TObject);
+procedure TFormularioPrincipal.Button_setorClick(Sender: TObject);
 var
   LForm_setor : TForm_setor;
 begin
@@ -129,12 +143,12 @@ begin
   end;
 end;
 
-procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
+procedure TFormularioPrincipal.FormClose(Sender: TObject; var Action: TCloseAction);
 begin
   //TFDTable1.Close();
 end;
 
-procedure TForm1.FormCreate(Sender: TObject);
+procedure TFormularioPrincipal.FormCreate(Sender: TObject);
 begin
   //TFDTable1.Open();
 end;

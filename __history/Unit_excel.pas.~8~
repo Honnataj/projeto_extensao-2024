@@ -1,0 +1,89 @@
+unit Unit_excel;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.Grids, Vcl.DBGrids,
+  FireDAC.Comp.DataSet;
+
+type
+  TForm2 = class(TForm)
+    FDTable1: TFDTable;
+    FDTable1codigo: TFDAutoIncField;
+    FDTable1data_requerimento: TWideMemoField;
+    FDTable1quantidade: TIntegerField;
+    FDTable1requerente_responsavel_codigo: TIntegerField;
+    FDTable1requerente_nao_responsavel: TWideMemoField;
+    FDTable1item_codigo: TIntegerField;
+    FDTable1local_retirada_codigo: TIntegerField;
+    FDTable1setor_codigo: TIntegerField;
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    Exportar: TButton;
+    FDQuery1: TFDQuery;
+    procedure ExportarClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form2: TForm2;
+
+implementation
+uses Unit1;
+{$R *.dfm}
+
+procedure TForm2.ExportarClick(Sender: TObject);
+var
+  CSVFile: TextFile;
+  Line: string;
+  i: Integer;
+begin
+  // Abre a consulta SQL
+  FDQuery1.Open;
+
+  // Cria ou abre o arquivo CSV
+  AssignFile(CSVFile, 'C:\Users\jhonn\Documents\Embarcadero\Studio\projeto_extensao-2024\banco_teste\SeuArquivo.csv');
+  Rewrite(CSVFile); // Cria um novo arquivo ou sobrescreve um existente
+
+  try
+    // Escreve os cabeçalhos das colunas no CSV
+    Line := '';
+    for i := 0 to FDQuery1.FieldCount - 1 do
+    begin
+      Line := Line + FDQuery1.Fields[i].FieldName;
+      if i < FDQuery1.FieldCount - 1 then
+        Line := Line + ';'; // Separador padrão CSV (pode ser outro, como vírgula)
+    end;
+    Writeln(CSVFile, Line);
+
+    // Escreve os dados das linhas no CSV
+    while not FDQuery1.Eof do
+    begin
+      Line := '';
+      for i := 0 to FDQuery1.FieldCount - 1 do
+      begin
+        Line := Line + FDQuery1.Fields[i].AsString;
+        if i < FDQuery1.FieldCount - 1 then
+          Line := Line + ';';
+      end;
+      Writeln(CSVFile, Line);
+      FDQuery1.Next; // Próxima linha do resultado da consulta
+    end;
+
+  finally
+    // Fecha o arquivo e a consulta
+    CloseFile(CSVFile);
+    FDQuery1.Close;
+  end;
+
+  // Mensagem de confirmação
+  ShowMessage('Dados exportados com sucesso para CSV!');
+end;
+end.

@@ -1,7 +1,7 @@
-object Form1: TForm1
+object FormularioPrincipal: TFormularioPrincipal
   Left = 0
   Top = 0
-  Caption = 'Form1'
+  Caption = 'FormularioPrincipal'
   ClientHeight = 545
   ClientWidth = 626
   Color = clBtnFace
@@ -58,16 +58,28 @@ object Form1: TForm1
     TabOrder = 4
     OnClick = Button_requerimentoClick
   end
+  object Button_ExportExcel: TButton
+    Left = 24
+    Top = 344
+    Width = 195
+    Height = 25
+    Caption = 'exportar Excel'
+    TabOrder = 5
+    OnClick = Button_ExportExcelClick
+  end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
     Left = 48
     Top = 48
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=D:\projeto_extensao-2024\banco_independentes.db'
+      
+        'Database=C:\Users\jhonn\Documents\Embarcadero\Studio\projeto_ext' +
+        'ensao-2024\banco_independentes.db'
       'SharedCache=False'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 168
     Top = 56
