@@ -1,4 +1,4 @@
-unit Unit_requerimento;
+﻿unit Unit_requerimento;
 
 interface
 
@@ -27,9 +27,6 @@ type
     Label6: TLabel;
     Label7: TLabel;
     Label8: TLabel;
-    ButtonAdicionar: TButton;
-    ButtonExcluir: TButton;
-    DBGrid1: TDBGrid;
     Button1: TButton;
     FDQuery1: TFDQuery;
     ComboBox1: TComboBox;
@@ -38,8 +35,6 @@ type
     ComboBox4: TComboBox;
     Edit2: TEdit;
     Edit3: TEdit;
-    procedure ButtonAdicionarClick(Sender: TObject);
-    procedure ButtonExcluirClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
@@ -66,28 +61,51 @@ var
   quantidadeRequerimento, requerenteNaoResponsavel: string;
   indexResponsavel, indexItem, indexLocalRetirada, indexSetor: Integer;
   valorCodigoResponsavel: Integer;
-  camposValidos, quantidadeNumerica: boolean;
+  camposValidos: boolean;
   dataAtual: TDate;
+  i: Integer;
 begin
   dataAtual := Date;
 
   quantidadeRequerimento := Edit2.Text;
   requerenteNaoResponsavel := Edit3.Text;
-  indexResponsavel := ComboBox1.ItemIndex;
+  indexResponsavel := ComboBox1.ItemIndex - 1;
   indexItem := ComboBox2.ItemIndex;
-  indexLocalRetirada := ComboBox3.ItemIndex - 1;
+  indexLocalRetirada := ComboBox3.ItemIndex;
   indexSetor := ComboBox4.ItemIndex;
 
+  // erros
   camposValidos := True;
-  if Trim(quantidadeRequerimento) = '' then camposValidos := False
-  else if quantidadeRequerimento.ToInteger < 1 then camposValidos := False;
-  quantidadeNumerica := True;
 
-  try
-    quantidadeRequerimento.ToInteger;
-  except
-    quantidadeNumerica := False;
-    showMessage('A quantidade precisa ser um valor numérico!');
+  // QUANTIDADE
+  // campo vazio
+  if Trim(quantidadeRequerimento) = '' then
+  begin
+    showMessage('O campo "quantidade" não pode estar vazio!');
+    camposValidos := False;
+  end
+  // valor não numérico
+  else if TryStrToInt(quantidadeRequerimento, i) = False then
+  begin
+    showMessage('A quantidade precisa ser um valor numérico inteiro!');
+    camposValidos := False;
+  end
+  // valor negativo
+  else if quantidadeRequerimento.ToInteger < 1 then
+  begin
+    showMessage('A quantidade precisa ser um valor maior que 0!');
+    camposValidos := False;
+  end
+  // OUTROS CAMPOS
+  // comboboxes não selecionadas
+  else if (ComboBox1.ItemIndex = -1) or (ComboBox2.ItemIndex = -1) or (ComboBox3.ItemIndex = -1) or (ComboBox4.ItemIndex = -1) then
+  begin
+    showMessage('Por favor, preencha todos os campos.');
+    camposValidos := False;
+  end
+  else if (ComboBox1.ItemIndex = 0) and (Edit3.Text = '') then
+  begin
+    showMessage('Por favor, indique o nome do requerente.');
     camposValidos := False;
   end;
 
@@ -99,7 +117,11 @@ begin
       SQL.Add('INSERT INTO TB_requerimento VALUES (null, :DataRequerimento, :Quantidade, :RequerenteResponsavelCodigo, :RequerenteNaoResponsavel, :ItemCodigo, :LocalRetiradaCodigo, :SetorCodigo);');
       ParamByName('dataRequerimento').AsString := DateToStr(dataAtual);
       ParamByName('quantidade').AsInteger := StrToInt(quantidadeRequerimento);
-      ParamByName('requerenteResponsavelCodigo').AsInteger := codigoResponsavel[indexResponsavel];
+      if indexResponsavel <> -1 then ParamByName('requerenteResponsavelCodigo').AsInteger := codigoResponsavel[indexResponsavel]
+      else begin
+        ParamByName('requerenteResponsavelCodigo').DataType := ftInteger;
+        ParamByName('requerenteResponsavelCodigo').Value := NULL;
+      end;
       if requerenteNaoResponsavel <> '' then ParamByName('requerenteNaoResponsavel').AsString := requerenteNaoResponsavel
       else begin
         ParamByName('requerenteNaoResponsavel').DataType := ftString;
@@ -110,20 +132,15 @@ begin
       ParamByName('setorCodigo').AsInteger := codigoSetor[indexSetor];
       Command.CommandKind := skInsert;
       ExecSQL;
-      ShowMessage('Requerimento adicionado com sucesso!');
-      Edit2.Clear;
     end;
+    ShowMessage('Requerimento adicionado com sucesso!');
+    Edit2.Clear;
+    Edit3.Clear;
+    ComboBox1.ClearSelection;
+    ComboBox2.ClearSelection;
+    ComboBox3.ClearSelection;
+    ComboBox4.ClearSelection;
   end;
-end;
-
-procedure TForm_requerimento.ButtonAdicionarClick(Sender: TObject);
-begin
-  TFDTable_requerimento.Append;
-end;
-
-procedure TForm_requerimento.ButtonExcluirClick(Sender: TObject);
-begin
-  TFDTable_requerimento.Delete;
 end;
 
 procedure TForm_requerimento.ComboBox1Change(Sender: TObject);

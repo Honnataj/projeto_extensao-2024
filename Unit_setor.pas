@@ -1,4 +1,4 @@
-unit Unit_setor;
+﻿unit Unit_setor;
 
 interface
 
@@ -14,12 +14,8 @@ type
   TForm_setor = class(TForm)
     DataSource1: TDataSource;
     TFDTable_setor: TFDTable;
-    ButtonAdicionar: TButton;
-    ButtonExcluir: TButton;
     Label2: TLabel;
     Label3: TLabel;
-    DBEdit2: TDBEdit;
-    DBGrid1: TDBGrid;
     FDQuery1: TFDQuery;
     Button1: TButton;
     ComboBox1: TComboBox;
@@ -27,8 +23,6 @@ type
     TFDTable_setornome: TWideMemoField;
     TFDTable_setorresponsavel_codigo: TIntegerField;
     Edit1: TEdit;
-    procedure ButtonExcluirClick(Sender: TObject);
-    procedure ButtonAdicionarClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
   private
@@ -49,32 +43,43 @@ procedure TForm_setor.Button1Click(Sender: TObject);
 var
   nomeSetor: string;
   indexResponsavel: Integer;
+  camposValidos: boolean;
 begin
   nomeSetor := Edit1.Text;
   indexResponsavel := ComboBox1.ItemIndex;
-  if Trim(nomeSetor) <> '' then
+
+  // erros
+  camposValidos := True;
+
+  // NOME: campo vazio
+  if Trim(nomeSetor) = '' then
   begin
-    with FDQuery1.SQL do begin
-    FDQuery1.SQL.Clear;
-    FDQuery1.SQL.Add('INSERT INTO TB_setor VALUES (null, :NomeSetor , :CodigoResponsavel);');
-    FDQuery1.ParamByName('nomeSetor').AsString := nomeSetor;
-    FDQuery1.ParamByName('codigoResponsavel').AsInteger := codigoResponsavel[indexResponsavel];
+    showMessage('O campo "NOME" não pode estar vazio!');
+    camposValidos := False;
+  end
+  // COMBOBOX: não selecionado
+  else if (ComboBox1.ItemIndex = -1) then
+  begin
+    showMessage('Por favor, indique o responsável pelo setor.');
+    camposValidos := False;
+  end;
+
+  if camposValidos then
+  begin
+    with FDQuery1 do begin
+    SQL.Clear;
+    SQL.Add('INSERT INTO TB_setor VALUES (null, :NomeSetor , :CodigoResponsavel);');
+    ParamByName('nomeSetor').AsString := nomeSetor;
+    ParamByName('codigoResponsavel').AsInteger := codigoResponsavel[indexResponsavel];
+    Command.CommandKind := skInsert;
+    ExecSQL;
     end;
-    FDQuery1.Command.CommandKind := skInsert;
-    FDQuery1.ExecSQL;
+    showMessage('Setor adicionado com sucesso!');
+    Edit1.Clear;
+    ComboBox1.ClearSelection;
   end;
   // FDQuery.Open;
   // FDquery1.NextRecordSet;
-end;
-
-procedure TForm_setor.ButtonAdicionarClick(Sender: TObject);
-begin
-  TFDTable_setor.Append;
-end;
-
-procedure TForm_setor.ButtonExcluirClick(Sender: TObject);
-begin
-  TFDTable_setor.Delete;
 end;
 
 procedure TForm_setor.FormActivate(Sender: TObject);

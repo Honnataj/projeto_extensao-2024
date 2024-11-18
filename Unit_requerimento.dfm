@@ -13,168 +13,96 @@ object Form_requerimento: TForm_requerimento
   OnActivate = FormActivate
   TextHeight = 15
   object Label3: TLabel
-    Left = 240
-    Top = 304
-    Width = 60
+    Left = 297
+    Top = 161
+    Width = 73
     Height = 15
-    Caption = 'quantidade'
+    Caption = 'QUANTIDADE'
   end
   object Label4: TLabel
-    Left = 240
-    Top = 352
-    Width = 166
+    Left = 300
+    Top = 248
+    Width = 70
     Height = 15
-    Caption = 'requerente_responsavel_codigo'
+    Caption = 'REQUERENTE'
   end
   object Label6: TLabel
-    Left = 240
-    Top = 512
-    Width = 66
+    Left = 344
+    Top = 203
+    Width = 26
     Height = 15
-    Caption = 'item_codigo'
+    Caption = 'ITEM'
   end
   object Label7: TLabel
-    Left = 240
-    Top = 560
-    Width = 112
+    Left = 258
+    Top = 296
+    Width = 110
     Height = 15
-    Caption = 'local_retirada_codigo'
+    Caption = 'LOCAL DE RETIRADA'
   end
   object Label8: TLabel
-    Left = 240
-    Top = 608
-    Width = 68
+    Left = 337
+    Top = 344
+    Width = 33
     Height = 15
-    Caption = 'setor_codigo'
-  end
-  object ButtonAdicionar: TButton
-    Left = 240
-    Top = 668
-    Width = 75
-    Height = 25
-    Caption = 'Adicionar'
-    TabOrder = 0
-    OnClick = ButtonAdicionarClick
-  end
-  object ButtonExcluir: TButton
-    Left = 331
-    Top = 668
-    Width = 75
-    Height = 25
-    Caption = 'Excluir'
-    TabOrder = 1
-    OnClick = ButtonExcluirClick
-  end
-  object DBGrid1: TDBGrid
-    Left = 20
-    Top = 727
-    Width = 837
-    Height = 135
-    DataSource = DataSource1
-    TabOrder = 2
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
-    Columns = <
-      item
-        Expanded = False
-        FieldName = 'codigo'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'data_requerimento'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'quantidade'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'requerente_responsavel_codigo'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'requerente_nao_responsavel'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'item_codigo'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'local_retirada_codigo'
-        Visible = True
-      end
-      item
-        Expanded = False
-        FieldName = 'setor_codigo'
-        Visible = True
-      end>
+    Caption = 'SETOR'
   end
   object Button1: TButton
-    Left = 608
-    Top = 367
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 3
+    Left = 376
+    Top = 391
+    Width = 145
+    Height = 50
+    Caption = 'SALVAR REGISTRO'
+    TabOrder = 0
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
-    Left = 240
-    Top = 373
+    Left = 376
+    Top = 245
     Width = 145
     Height = 23
-    TabOrder = 4
-    Text = 'ComboBox1'
+    Style = csDropDownList
+    TabOrder = 1
     OnChange = ComboBox1Change
   end
   object ComboBox2: TComboBox
-    Left = 240
-    Top = 533
+    Left = 376
+    Top = 200
     Width = 145
     Height = 23
-    TabOrder = 5
-    Text = 'ComboBox1'
+    Style = csDropDownList
+    TabOrder = 2
     OnChange = ComboBox2Change
   end
   object ComboBox3: TComboBox
-    Left = 240
-    Top = 581
+    Left = 376
+    Top = 293
     Width = 145
     Height = 23
-    TabOrder = 6
-    Text = 'ComboBox1'
+    Style = csDropDownList
+    TabOrder = 3
   end
   object ComboBox4: TComboBox
-    Left = 240
-    Top = 629
+    Left = 376
+    Top = 341
     Width = 145
     Height = 23
-    TabOrder = 7
-    Text = 'ComboBox1'
+    Style = csDropDownList
+    TabOrder = 4
   end
   object Edit2: TEdit
-    Left = 240
-    Top = 323
-    Width = 121
-    Height = 23
-    TabOrder = 8
+    Left = 376
+    Top = 158
+    Width = 33
+    Height = 18
+    TabOrder = 5
   end
   object Edit3: TEdit
-    Left = 395
-    Top = 373
-    Width = 121
+    Left = 531
+    Top = 245
+    Width = 222
     Height = 23
-    TabOrder = 9
+    TabOrder = 6
     Visible = False
   end
   object TFDTable_requerimento: TFDTable
@@ -182,8 +110,8 @@ object Form_requerimento: TForm_requerimento
     Connection = Form1.FDConnection1
     ResourceOptions.AssignedValues = [rvEscapeExpand]
     TableName = 'TB_requerimento'
-    Left = 432
-    Top = 32
+    Left = 864
+    Top = 96
     object TFDTable_requerimentocodigo: TFDAutoIncField
       FieldName = 'codigo'
       Origin = 'codigo'
@@ -228,14 +156,14 @@ object Form_requerimento: TForm_requerimento
   end
   object DataSource1: TDataSource
     DataSet = TFDTable_requerimento
-    Left = 544
-    Top = 32
+    Left = 864
+    Top = 152
   end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
     SQL.Strings = (
       'SELECT * FROM TB_requerimento')
-    Left = 616
-    Top = 88
+    Left = 864
+    Top = 208
   end
 end

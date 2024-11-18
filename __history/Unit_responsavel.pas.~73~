@@ -1,0 +1,59 @@
+unit Unit_responsavel;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
+  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, FireDAC.Stan.Intf,
+  FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
+  FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+
+type
+  TForm_responsavel = class(TForm)
+    DataSource1: TDataSource;
+    TFDTable_responsavel: TFDTable;
+    TFDTable_responsavelcodigo: TFDAutoIncField;
+    TFDTable_responsavelnome: TWideMemoField;
+    Label2: TLabel;
+    Button1: TButton;
+    FDQuery1: TFDQuery;
+    Edit1: TEdit;
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_responsavel: TForm_responsavel;
+
+implementation
+
+{$R *.dfm}
+
+
+procedure TForm_responsavel.Button1Click(Sender: TObject);
+var
+  nome : string;
+begin
+  nome := Edit1.Text;
+  if Trim(nome) <> '' then
+  begin
+    with FDQuery1 do begin
+      SQL.Clear;
+      SQL.Add('INSERT INTO TB_responsavel VALUES (null, :Nome);');
+      ParamByName('nome').AsString := nome;
+      Command.CommandKind := skInsert;
+      ExecSQL;
+    end;
+    showMessage('RESPONSÁVEL ADICIONADO COM SUCESSO! Para associá-lo a um setor, cadastre um setor na opção "Cadastro de setor" da página inicial.');
+  end
+  else showMessage('Por favor, indique o nome do requerente.');
+  Edit1.Clear;
+end;
+
+
+end.

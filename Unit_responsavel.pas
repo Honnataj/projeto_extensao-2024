@@ -13,9 +13,6 @@ uses
 type
   TForm_responsavel = class(TForm)
     DataSource1: TDataSource;
-    DBGrid1: TDBGrid;
-    ButtonAdicionar: TButton;
-    ButtonExcluir: TButton;
     TFDTable_responsavel: TFDTable;
     TFDTable_responsavelcodigo: TFDAutoIncField;
     TFDTable_responsavelnome: TWideMemoField;
@@ -23,10 +20,6 @@ type
     Button1: TButton;
     FDQuery1: TFDQuery;
     Edit1: TEdit;
-    procedure ButtonAdicionarClick(Sender: TObject);
-    procedure ButtonExcluirClick(Sender: TObject);
-    procedure FormCreate(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -44,42 +37,23 @@ implementation
 
 procedure TForm_responsavel.Button1Click(Sender: TObject);
 var
-  nome1 : string;
+  nome : string;
 begin
-  nome1 := Edit1.Text;
-  if Trim(nome1) <> '' then
+  nome := Edit1.Text;
+  if Trim(nome) <> '' then
   begin
-    with FDQuery1.SQL do begin
-      FDQuery1.SQL.Clear;
-      FDQuery1.SQL.Add('INSERT INTO TB_responsavel VALUES (null, :Nome1);');
-      FDQuery1.ParamByName('nome1').AsString := nome1;
+    with FDQuery1 do begin
+      SQL.Clear;
+      SQL.Add('INSERT INTO TB_responsavel VALUES (null, :Nome);');
+      ParamByName('nome').AsString := nome;
+      Command.CommandKind := skInsert;
+      ExecSQL;
     end;
-    FDQuery1.Command.CommandKind := skInsert;
-    FDQuery1.ExecSQL;
-    Label2.Font.Color := clBlack;
+    showMessage('RESPONSÁVEL ADICIONADO COM SUCESSO! Para associá-lo a um setor, cadastre um setor na opção "Cadastro de setor" da página inicial.');
+    Edit1.Clear;
   end
-  else
-    Label2.Font.Color := clRed;
+  else showMessage('Por favor, indique o nome do requerente.');
 end;
 
-procedure TForm_responsavel.ButtonAdicionarClick(Sender: TObject);
-begin
-  TFDTable_responsavel.Append;
-end;
-
-procedure TForm_responsavel.ButtonExcluirClick(Sender: TObject);
-begin
-  TFDTable_responsavel.Delete;
-end;
-
-procedure TForm_responsavel.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  TFDTable_responsavel.Close;
-end;
-
-procedure TForm_responsavel.FormCreate(Sender: TObject);
-begin
-  TFDTable_responsavel.Open;
-end;
 
 end.

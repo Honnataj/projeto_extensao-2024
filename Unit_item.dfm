@@ -13,84 +13,42 @@ object Form_item: TForm_item
   OnActivate = FormActivate
   TextHeight = 15
   object Label2: TLabel
-    Left = 214
-    Top = 112
-    Width = 31
+    Left = 205
+    Top = 155
+    Width = 35
     Height = 15
-    Caption = 'nome'
+    Caption = 'NOME'
   end
   object Label3: TLabel
-    Left = 214
-    Top = 224
-    Width = 112
+    Left = 130
+    Top = 192
+    Width = 110
     Height = 15
-    Caption = 'local_retirada_codigo'
-    FocusControl = DBEdit2
-  end
-  object ButtonAdicionar: TButton
-    Left = 214
-    Top = 284
-    Width = 75
-    Height = 25
-    Caption = 'Adicionar'
-    TabOrder = 0
-    OnClick = ButtonAdicionarClick
-  end
-  object ButtonExcluir: TButton
-    Left = 310
-    Top = 284
-    Width = 75
-    Height = 25
-    Caption = 'Excluir'
-    TabOrder = 1
-    OnClick = ButtonExcluirClick
-  end
-  object DBGrid1: TDBGrid
-    Left = 160
-    Top = 313
-    Width = 320
-    Height = 120
-    DataSource = DataSource1
-    TabOrder = 2
-    TitleFont.Charset = DEFAULT_CHARSET
-    TitleFont.Color = clWindowText
-    TitleFont.Height = -12
-    TitleFont.Name = 'Segoe UI'
-    TitleFont.Style = []
-  end
-  object DBEdit2: TDBEdit
-    Left = 214
-    Top = 240
-    Width = 154
-    Height = 23
-    DataField = 'local_retirada_codigo'
-    DataSource = DataSource1
-    TabOrder = 3
+    Caption = 'LOCAL DE RETIRADA'
   end
   object Button1: TButton
-    Left = 488
-    Top = 248
-    Width = 75
-    Height = 25
-    Caption = 'Button1'
-    TabOrder = 4
+    Left = 246
+    Top = 232
+    Width = 145
+    Height = 41
+    Caption = 'SALVAR REGISTRO'
+    TabOrder = 0
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
-    Left = 80
-    Top = 64
+    Left = 246
+    Top = 189
     Width = 145
     Height = 23
-    TabOrder = 5
-    Text = 'ComboBox1'
+    Style = csDropDownList
+    TabOrder = 1
   end
   object Edit1: TEdit
-    Left = 214
-    Top = 144
-    Width = 121
+    Left = 246
+    Top = 152
+    Width = 145
     Height = 23
-    TabOrder = 6
-    Text = 'Edit1'
+    TabOrder = 2
   end
   object TFDTable_item: TFDTable
     IndexFieldNames = 'codigo'

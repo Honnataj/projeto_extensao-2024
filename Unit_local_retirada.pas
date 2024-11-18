@@ -17,14 +17,9 @@ type
     TFDTable_local_retiradanome: TWideMemoField;
     DataSource1: TDataSource;
     Label2: TLabel;
-    DBMemo1: TDBMemo;
-    ButtonAdicionar: TButton;
-    ButtonExcluir: TButton;
-    DBGrid1: TDBGrid;
     FDQuery1: TFDQuery;
     Button1: TButton;
-    procedure ButtonAdicionarClick(Sender: TObject);
-    procedure ButtonExcluirClick(Sender: TObject);
+    Edit1: TEdit;
     procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
@@ -40,21 +35,25 @@ implementation
 {$R *.dfm}
 
 procedure TForm_local_retirada.Button1Click(Sender: TObject);
+var
+  nome: string;
 begin
-  with FDQuery1.SQL do begin
-    FDQuery1.SQL.Clear;
-    FDQuery1.SQL.Add('INSERT INTO TB_local_retirada VALUES (null, ''Nome1'');');
-  end;
+  nome := Edit1.Text;
+  if Trim(nome) <> '' then
+  begin
+    with FDQuery1 do begin
+      SQL.Clear;
+      SQL.Add('INSERT INTO TB_local_retirada VALUES (null, :Nome);');
+      ParamByName('nome').AsString := nome;
+      Command.CommandKind := skInsert;
+      ExecSQL;
+    end;
+    showMessage('LOCAL DE RETIRADA ADICIONADO COM SUCESSO!');
+    Edit1.Clear;
+  end
+  else showMessage('Por favor, indique o nome do local de retirada');
 end;
 
-procedure TForm_local_retirada.ButtonAdicionarClick(Sender: TObject);
-begin
-  TFDTable_local_retirada.Append;
-end;
 
-procedure TForm_local_retirada.ButtonExcluirClick(Sender: TObject);
-begin
-  TFDTable_local_retirada.Delete;
-end;
 
 end.
