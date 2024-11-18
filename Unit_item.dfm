@@ -10,6 +10,7 @@ object Form_item: TForm_item
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnActivate = FormActivate
   TextHeight = 15
   object Label2: TLabel
     Left = 214
@@ -17,7 +18,6 @@ object Form_item: TForm_item
     Width = 31
     Height = 15
     Caption = 'nome'
-    FocusControl = DBMemo1
   end
   object Label3: TLabel
     Left = 214
@@ -58,15 +58,6 @@ object Form_item: TForm_item
     TitleFont.Name = 'Segoe UI'
     TitleFont.Style = []
   end
-  object DBMemo1: TDBMemo
-    Left = 214
-    Top = 128
-    Width = 185
-    Height = 89
-    DataField = 'nome'
-    DataSource = DataSource1
-    TabOrder = 3
-  end
   object DBEdit2: TDBEdit
     Left = 214
     Top = 240
@@ -74,7 +65,7 @@ object Form_item: TForm_item
     Height = 23
     DataField = 'local_retirada_codigo'
     DataSource = DataSource1
-    TabOrder = 4
+    TabOrder = 3
   end
   object Button1: TButton
     Left = 488
@@ -82,8 +73,24 @@ object Form_item: TForm_item
     Width = 75
     Height = 25
     Caption = 'Button1'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = Button1Click
+  end
+  object ComboBox1: TComboBox
+    Left = 80
+    Top = 64
+    Width = 145
+    Height = 23
+    TabOrder = 5
+    Text = 'ComboBox1'
+  end
+  object Edit1: TEdit
+    Left = 214
+    Top = 144
+    Width = 121
+    Height = 23
+    TabOrder = 6
+    Text = 'Edit1'
   end
   object TFDTable_item: TFDTable
     IndexFieldNames = 'codigo'

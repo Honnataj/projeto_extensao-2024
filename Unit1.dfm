@@ -68,6 +68,7 @@ object Form1: TForm1
       'SharedCache=False'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 168
     Top = 56

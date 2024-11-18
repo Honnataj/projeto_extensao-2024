@@ -10,22 +10,14 @@ object Form_requerimento: TForm_requerimento
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
+  OnActivate = FormActivate
   TextHeight = 15
-  object Label2: TLabel
-    Left = 240
-    Top = 192
-    Width = 100
-    Height = 15
-    Caption = 'data_requerimento'
-    FocusControl = DBMemo1
-  end
   object Label3: TLabel
     Left = 240
     Top = 304
     Width = 60
     Height = 15
     Caption = 'quantidade'
-    FocusControl = DBEdit2
   end
   object Label4: TLabel
     Left = 240
@@ -33,15 +25,6 @@ object Form_requerimento: TForm_requerimento
     Width = 166
     Height = 15
     Caption = 'requerente_responsavel_codigo'
-    FocusControl = DBEdit3
-  end
-  object Label5: TLabel
-    Left = 240
-    Top = 400
-    Width = 149
-    Height = 15
-    Caption = 'requerente_nao_responsavel'
-    FocusControl = DBMemo2
   end
   object Label6: TLabel
     Left = 240
@@ -49,7 +32,6 @@ object Form_requerimento: TForm_requerimento
     Width = 66
     Height = 15
     Caption = 'item_codigo'
-    FocusControl = DBEdit4
   end
   object Label7: TLabel
     Left = 240
@@ -57,7 +39,6 @@ object Form_requerimento: TForm_requerimento
     Width = 112
     Height = 15
     Caption = 'local_retirada_codigo'
-    FocusControl = DBEdit5
   end
   object Label8: TLabel
     Left = 240
@@ -65,70 +46,6 @@ object Form_requerimento: TForm_requerimento
     Width = 68
     Height = 15
     Caption = 'setor_codigo'
-    FocusControl = DBEdit6
-  end
-  object DBMemo1: TDBMemo
-    Left = 240
-    Top = 208
-    Width = 185
-    Height = 89
-    DataField = 'data_requerimento'
-    DataSource = DataSource1
-    TabOrder = 0
-  end
-  object DBEdit2: TDBEdit
-    Left = 240
-    Top = 320
-    Width = 154
-    Height = 23
-    DataField = 'quantidade'
-    DataSource = DataSource1
-    TabOrder = 1
-  end
-  object DBEdit3: TDBEdit
-    Left = 240
-    Top = 368
-    Width = 154
-    Height = 23
-    DataField = 'requerente_responsavel_codigo'
-    DataSource = DataSource1
-    TabOrder = 2
-  end
-  object DBMemo2: TDBMemo
-    Left = 240
-    Top = 416
-    Width = 185
-    Height = 89
-    DataField = 'requerente_nao_responsavel'
-    DataSource = DataSource1
-    TabOrder = 3
-  end
-  object DBEdit4: TDBEdit
-    Left = 240
-    Top = 528
-    Width = 154
-    Height = 23
-    DataField = 'item_codigo'
-    DataSource = DataSource1
-    TabOrder = 4
-  end
-  object DBEdit5: TDBEdit
-    Left = 240
-    Top = 576
-    Width = 154
-    Height = 23
-    DataField = 'local_retirada_codigo'
-    DataSource = DataSource1
-    TabOrder = 5
-  end
-  object DBEdit6: TDBEdit
-    Left = 240
-    Top = 624
-    Width = 154
-    Height = 23
-    DataField = 'setor_codigo'
-    DataSource = DataSource1
-    TabOrder = 6
   end
   object ButtonAdicionar: TButton
     Left = 240
@@ -136,7 +53,7 @@ object Form_requerimento: TForm_requerimento
     Width = 75
     Height = 25
     Caption = 'Adicionar'
-    TabOrder = 7
+    TabOrder = 0
     OnClick = ButtonAdicionarClick
   end
   object ButtonExcluir: TButton
@@ -145,7 +62,7 @@ object Form_requerimento: TForm_requerimento
     Width = 75
     Height = 25
     Caption = 'Excluir'
-    TabOrder = 8
+    TabOrder = 1
     OnClick = ButtonExcluirClick
   end
   object DBGrid1: TDBGrid
@@ -154,7 +71,7 @@ object Form_requerimento: TForm_requerimento
     Width = 837
     Height = 135
     DataSource = DataSource1
-    TabOrder = 9
+    TabOrder = 2
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -208,8 +125,57 @@ object Form_requerimento: TForm_requerimento
     Width = 75
     Height = 25
     Caption = 'Button1'
-    TabOrder = 10
+    TabOrder = 3
     OnClick = Button1Click
+  end
+  object ComboBox1: TComboBox
+    Left = 240
+    Top = 373
+    Width = 145
+    Height = 23
+    TabOrder = 4
+    Text = 'ComboBox1'
+    OnChange = ComboBox1Change
+  end
+  object ComboBox2: TComboBox
+    Left = 240
+    Top = 533
+    Width = 145
+    Height = 23
+    TabOrder = 5
+    Text = 'ComboBox1'
+    OnChange = ComboBox2Change
+  end
+  object ComboBox3: TComboBox
+    Left = 240
+    Top = 581
+    Width = 145
+    Height = 23
+    TabOrder = 6
+    Text = 'ComboBox1'
+  end
+  object ComboBox4: TComboBox
+    Left = 240
+    Top = 629
+    Width = 145
+    Height = 23
+    TabOrder = 7
+    Text = 'ComboBox1'
+  end
+  object Edit2: TEdit
+    Left = 240
+    Top = 323
+    Width = 121
+    Height = 23
+    TabOrder = 8
+  end
+  object Edit3: TEdit
+    Left = 395
+    Top = 373
+    Width = 121
+    Height = 23
+    TabOrder = 9
+    Visible = False
   end
   object TFDTable_requerimento: TFDTable
     IndexFieldNames = 'codigo'

@@ -17,7 +17,6 @@ type
     ButtonAdicionar: TButton;
     ButtonExcluir: TButton;
     Label2: TLabel;
-    DBMemo1: TDBMemo;
     Label3: TLabel;
     DBEdit2: TDBEdit;
     DBGrid1: TDBGrid;
@@ -27,6 +26,7 @@ type
     TFDTable_setorcodigo: TFDAutoIncField;
     TFDTable_setornome: TWideMemoField;
     TFDTable_setorresponsavel_codigo: TIntegerField;
+    Edit1: TEdit;
     procedure ButtonExcluirClick(Sender: TObject);
     procedure ButtonAdicionarClick(Sender: TObject);
     procedure Button1Click(Sender: TObject);
@@ -39,18 +39,30 @@ type
 
 var
   Form_setor: TForm_setor;
+  codigoResponsavel: array of Integer;
 
 implementation
 
 {$R *.dfm}
 
 procedure TForm_setor.Button1Click(Sender: TObject);
+var
+  nomeSetor: string;
+  indexResponsavel: Integer;
 begin
-  with FDQuery1.SQL do begin
+  nomeSetor := Edit1.Text;
+  indexResponsavel := ComboBox1.ItemIndex;
+  if Trim(nomeSetor) <> '' then
+  begin
+    with FDQuery1.SQL do begin
     FDQuery1.SQL.Clear;
-    FDQuery1.SQL.Add('INSERT INTO TB_setor VALUES (null, ''Nome1'', 8);');
+    FDQuery1.SQL.Add('INSERT INTO TB_setor VALUES (null, :NomeSetor , :CodigoResponsavel);');
+    FDQuery1.ParamByName('nomeSetor').AsString := nomeSetor;
+    FDQuery1.ParamByName('codigoResponsavel').AsInteger := codigoResponsavel[indexResponsavel];
+    end;
+    FDQuery1.Command.CommandKind := skInsert;
+    FDQuery1.ExecSQL;
   end;
-  FDQuery1.Open;
   // FDQuery.Open;
   // FDquery1.NextRecordSet;
 end;
@@ -67,16 +79,28 @@ end;
 
 procedure TForm_setor.FormActivate(Sender: TObject);
 var
-  s : string;
+  s: string;
+  i, contador: Integer;
 begin
   FDQuery1.Close;
   FDQuery1.SQL.Clear;
-  FDQuery1.SQL.Add('SELECT nome FROM TB_responsavel;');
+  FDQuery1.SQL.Add('SELECT COUNT(*) FROM TB_Responsavel;');
+  FDQuery1.Open;
+  contador := FDQuery1.Fields.Fields[0].AsInteger;
+
+  SetLength(codigoResponsavel, contador); // aloca memória, criando o vetor
+  i := 0;
+
+  FDQuery1.Close;
+  FDQuery1.SQL.Clear;
+  FDQuery1.SQL.Add('SELECT codigo, nome FROM TB_responsavel;');
   FDQuery1.Open;
   ComboBox1.Items.Clear;
   while not FDQuery1.Eof do
   begin
-    s := FDQuery1.Fields.Fields[0].AsString;
+    codigoResponsavel[i] := FDQuery1.Fields.Fields[0].AsInteger;
+    i := i + 1;
+    s := FDQuery1.Fields.Fields[1].AsString;
     ComboBox1.Items.Add(s);
     FDQuery1.Next;
   end;

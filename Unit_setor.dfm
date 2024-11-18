@@ -18,7 +18,6 @@ object Form_setor: TForm_setor
     Width = 31
     Height = 15
     Caption = 'nome'
-    FocusControl = DBMemo1
   end
   object Label3: TLabel
     Left = 264
@@ -46,15 +45,6 @@ object Form_setor: TForm_setor
     TabOrder = 1
     OnClick = ButtonExcluirClick
   end
-  object DBMemo1: TDBMemo
-    Left = 264
-    Top = 200
-    Width = 185
-    Height = 89
-    DataField = 'nome'
-    DataSource = DataSource1
-    TabOrder = 2
-  end
   object DBEdit2: TDBEdit
     Left = 264
     Top = 312
@@ -62,7 +52,7 @@ object Form_setor: TForm_setor
     Height = 23
     DataField = 'responsavel_codigo'
     DataSource = DataSource1
-    TabOrder = 3
+    TabOrder = 2
   end
   object DBGrid1: TDBGrid
     Left = 160
@@ -70,7 +60,7 @@ object Form_setor: TForm_setor
     Width = 320
     Height = 120
     DataSource = DataSource1
-    TabOrder = 4
+    TabOrder = 3
     TitleFont.Charset = DEFAULT_CHARSET
     TitleFont.Color = clWindowText
     TitleFont.Height = -12
@@ -99,7 +89,7 @@ object Form_setor: TForm_setor
     Width = 75
     Height = 25
     Caption = 'Button1'
-    TabOrder = 5
+    TabOrder = 4
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
@@ -107,8 +97,16 @@ object Form_setor: TForm_setor
     Top = 293
     Width = 145
     Height = 23
-    TabOrder = 6
+    TabOrder = 5
     Text = 'ComboBox1'
+  end
+  object Edit1: TEdit
+    Left = 263
+    Top = 205
+    Width = 121
+    Height = 23
+    TabOrder = 6
+    Text = 'Edit1'
   end
   object DataSource1: TDataSource
     DataSet = TFDTable_setor
