@@ -12,11 +12,6 @@ uses
 
 type
   TForm_item = class(TForm)
-    TFDTable_item: TFDTable;
-    TFDTable_itemcodigo: TFDAutoIncField;
-    TFDTable_itemnome: TWideMemoField;
-    DataSource1: TDataSource;
-    TFDTable_itemlocal_retirada_codigo: TIntegerField;
     Label2: TLabel;
     Label3: TLabel;
     Button1: TButton;

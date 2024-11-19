@@ -58,6 +58,15 @@ object Form1: TForm1
     TabOrder = 4
     OnClick = Button_requerimentoClick
   end
+  object Button1: TButton
+    Left = 510
+    Top = 512
+    Width = 91
+    Height = 25
+    Caption = 'Gerar relat'#243'rio'
+    TabOrder = 5
+    OnClick = Button1Click
+  end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
     Left = 48
     Top = 48
@@ -71,12 +80,20 @@ object Form1: TForm1
     Connected = True
     LoginPrompt = False
     Left = 168
-    Top = 56
+    Top = 48
   end
   object FDLocalSQL1: TFDLocalSQL
     Connection = FDConnection1
     Active = True
-    Left = 248
-    Top = 40
+    DataSets = <
+      item
+      end>
+    Left = 264
+    Top = 48
+  end
+  object FDQuery1: TFDQuery
+    Connection = FDConnection1
+    Left = 352
+    Top = 48
   end
 end

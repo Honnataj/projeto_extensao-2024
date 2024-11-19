@@ -12,16 +12,11 @@ uses
 
 type
   TForm_setor = class(TForm)
-    DataSource1: TDataSource;
-    TFDTable_setor: TFDTable;
     Label2: TLabel;
     Label3: TLabel;
     FDQuery1: TFDQuery;
     Button1: TButton;
     ComboBox1: TComboBox;
-    TFDTable_setorcodigo: TFDAutoIncField;
-    TFDTable_setornome: TWideMemoField;
-    TFDTable_setorresponsavel_codigo: TIntegerField;
     Edit1: TEdit;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);

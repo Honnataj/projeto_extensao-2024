@@ -50,37 +50,6 @@ object Form_setor: TForm_setor
     Height = 23
     TabOrder = 2
   end
-  object DataSource1: TDataSource
-    DataSet = TFDTable_setor
-    Left = 552
-    Top = 16
-  end
-  object TFDTable_setor: TFDTable
-    Active = True
-    IndexFieldNames = 'codigo'
-    Connection = Form1.FDConnection1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'TB_setor'
-    Left = 536
-    Top = 80
-    object TFDTable_setorcodigo: TFDAutoIncField
-      FieldName = 'codigo'
-      Origin = 'codigo'
-      ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = False
-    end
-    object TFDTable_setornome: TWideMemoField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Required = True
-      BlobType = ftWideMemo
-    end
-    object TFDTable_setorresponsavel_codigo: TIntegerField
-      FieldName = 'responsavel_codigo'
-      Origin = 'responsavel_codigo'
-      Required = True
-    end
-  end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
     SQL.Strings = (

@@ -23,10 +23,7 @@ type
     Button_item: TButton;
     Button_local_retirada: TButton;
     Button_requerimento: TButton;
-    procedure buttonAdicionarClick(Sender: TObject);
-    procedure buttonAlterarClick(Sender: TObject);
-    procedure buttonExcluirClick(Sender: TObject);
-    procedure buttonSalvarClick(Sender: TObject);
+    FDQuery1: TFDQuery;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button_responsavelClick(Sender: TObject);
@@ -34,6 +31,7 @@ type
     procedure Button_local_retiradaClick(Sender: TObject);
     procedure Button_requerimentoClick(Sender: TObject);
     procedure Button_setorClick(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
   private
     { Private declarations }
   public
@@ -49,25 +47,47 @@ implementation
 
 uses Unit_item, Unit_local_retirada, Unit_requerimento;
 
-procedure TForm1.buttonAdicionarClick(Sender: TObject); // RETIRAR
+procedure TForm1.Button1Click(Sender: TObject);
+var
+  textoCSV: TStringList;
+  linha: string;
+  consultaSQL: string;
+  i: Integer;
 begin
-  //TFDTable_responsavel.Append;
+  consultaSQL := 'SELECT TB_req.data_requerimento, TB_req.quantidade,TB_req.requerente_nao_responsavel, TB_res.nome,TB_item.nome,TB_loc.nome,TB_setor.nome FROM TB_requerimento AS TB_req LEFT JOIN TB_responsavel AS TB_res ON TB_req.codigo = TB_res.codigo LEFT JOIN TB_item ON TB_req.codigo = TB_item.codigo LEFT JOIN TB_local_retirada AS TB_loc ON TB_req.codigo = TB_loc.codigo LEFT JOIN TB_setor ON TB_req.codigo = TB_setor.codigo';
+  linha := '';
+  textoCSV := TStringList.Create;
+  with FDQuery1 do begin
+    Close;
+    SQL.Clear;
+    SQL.Add(consultaSQL);
+    Open;
+
+    for i := 0 to Fields.Count-1 do
+    begin
+      if linha = '' then linha := Fields[i].FieldName
+      else linha := linha + ';' + Fields[i].FieldName;
+    end;
+    textoCSV.Add(linha);
+    linha := '';
+
+    while not Eof do
+    begin
+      for i := 0 to Fields.Count-1 do
+      begin
+          if linha = '' then linha := FieldByName(Fields[i].FieldName).AsString
+          else linha := linha + ';' + FieldByName(Fields[i].FieldName).AsString;
+      end;
+      textoCSV.Add(linha);
+      linha := '';
+      next;
+    end;
+  end;
+  textoCSV.SaveToFile('relatorio.csv');
+  ShowMessage('Relatório criado com sucesso!');
 end;
 
-procedure TForm1.buttonAlterarClick(Sender: TObject);
-begin
-  //TFDTable1.Edit;
-end;
 
-procedure TForm1.buttonExcluirClick(Sender: TObject);
-begin
-  //TFDTable1.Delete;
-end;
-
-procedure TForm1.buttonSalvarClick(Sender: TObject);
-begin
-  //TFDTable1.Post;
-end;
 
 procedure TForm1.Button_itemClick(Sender: TObject);
 var

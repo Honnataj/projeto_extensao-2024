@@ -1,4 +1,4 @@
-unit Unit_responsavel;
+﻿unit Unit_responsavel;
 
 interface
 
@@ -12,10 +12,6 @@ uses
 
 type
   TForm_responsavel = class(TForm)
-    DataSource1: TDataSource;
-    TFDTable_responsavel: TFDTable;
-    TFDTable_responsavelcodigo: TFDAutoIncField;
-    TFDTable_responsavelnome: TWideMemoField;
     Label2: TLabel;
     Button1: TButton;
     FDQuery1: TFDQuery;

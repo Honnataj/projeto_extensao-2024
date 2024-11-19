@@ -34,32 +34,6 @@ object Form_local_retirada: TForm_local_retirada
     Height = 23
     TabOrder = 1
   end
-  object TFDTable_local_retirada: TFDTable
-    Active = True
-    IndexFieldNames = 'codigo'
-    Connection = Form1.FDConnection1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'TB_local_retirada'
-    Left = 496
-    Top = 88
-    object TFDTable_local_retiradacodigo: TFDAutoIncField
-      FieldName = 'codigo'
-      Origin = 'codigo'
-      ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = False
-    end
-    object TFDTable_local_retiradanome: TWideMemoField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Required = True
-      BlobType = ftWideMemo
-    end
-  end
-  object DataSource1: TDataSource
-    DataSet = TFDTable_local_retirada
-    Left = 336
-    Top = 56
-  end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
     Left = 480

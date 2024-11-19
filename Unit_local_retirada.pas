@@ -12,10 +12,6 @@ uses
 
 type
   TForm_local_retirada = class(TForm)
-    TFDTable_local_retirada: TFDTable;
-    TFDTable_local_retiradacodigo: TFDAutoIncField;
-    TFDTable_local_retiradanome: TWideMemoField;
-    DataSource1: TDataSource;
     Label2: TLabel;
     FDQuery1: TFDQuery;
     Button1: TButton;

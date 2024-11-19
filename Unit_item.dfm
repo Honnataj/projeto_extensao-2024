@@ -50,36 +50,6 @@ object Form_item: TForm_item
     Height = 23
     TabOrder = 2
   end
-  object TFDTable_item: TFDTable
-    IndexFieldNames = 'codigo'
-    Connection = Form1.FDConnection1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'TB_item'
-    Left = 480
-    Top = 16
-    object TFDTable_itemcodigo: TFDAutoIncField
-      FieldName = 'codigo'
-      Origin = 'codigo'
-      ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = False
-    end
-    object TFDTable_itemnome: TWideMemoField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Required = True
-      BlobType = ftWideMemo
-    end
-    object TFDTable_itemlocal_retirada_codigo: TIntegerField
-      FieldName = 'local_retirada_codigo'
-      Origin = 'local_retirada_codigo'
-      Required = True
-    end
-  end
-  object DataSource1: TDataSource
-    DataSet = TFDTable_item
-    Left = 568
-    Top = 16
-  end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
     Left = 520

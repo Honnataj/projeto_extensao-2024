@@ -34,32 +34,6 @@ object Form_responsavel: TForm_responsavel
     Height = 23
     TabOrder = 1
   end
-  object DataSource1: TDataSource
-    DataSet = TFDTable_responsavel
-    Left = 552
-    Top = 16
-  end
-  object TFDTable_responsavel: TFDTable
-    Active = True
-    IndexFieldNames = 'codigo'
-    Connection = Form1.FDConnection1
-    ResourceOptions.AssignedValues = [rvEscapeExpand]
-    TableName = 'TB_responsavel'
-    Left = 536
-    Top = 80
-    object TFDTable_responsavelcodigo: TFDAutoIncField
-      FieldName = 'codigo'
-      Origin = 'codigo'
-      ProviderFlags = [pfInWhere, pfInKey]
-      ReadOnly = False
-    end
-    object TFDTable_responsavelnome: TWideMemoField
-      FieldName = 'nome'
-      Origin = 'nome'
-      Required = True
-      BlobType = ftWideMemo
-    end
-  end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
     SQL.Strings = (
