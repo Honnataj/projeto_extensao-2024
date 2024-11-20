@@ -146,6 +146,26 @@
             <Form>Form_requerimento</Form>
             <FormType>dfm</FormType>
         </DCCReference>
+        <DCCReference Include="Unit_consultaRequerimento.pas">
+            <Form>Form_consultaRequerimento</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit_consultaResponsavel.pas">
+            <Form>Form_consultaResponsavel</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit_consultaSetor.pas">
+            <Form>Form_consultaSetor</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit_consultaItem.pas">
+            <Form>Form_consultaItem</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
+        <DCCReference Include="Unit_consultaLocalRetirada.pas">
+            <Form>Form_consultaLocalRetirada</Form>
+            <FormType>dfm</FormType>
+        </DCCReference>
         <BuildConfiguration Include="Base">
             <Key>Base</Key>
         </BuildConfiguration>

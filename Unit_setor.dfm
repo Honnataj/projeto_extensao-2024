@@ -31,7 +31,7 @@ object Form_setor: TForm_setor
     Top = 288
     Width = 145
     Height = 49
-    Caption = 'SALVAR REGISTRO'
+    Caption = '&SALVAR REGISTRO'
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -49,6 +49,15 @@ object Form_setor: TForm_setor
     Width = 145
     Height = 23
     TabOrder = 2
+  end
+  object Button_consulta: TButton
+    Left = 525
+    Top = 392
+    Width = 75
+    Height = 25
+    Caption = '&Ver registros'
+    TabOrder = 3
+    OnClick = Button_consultaClick
   end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1

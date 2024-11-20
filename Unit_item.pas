@@ -18,8 +18,10 @@ type
     FDQuery1: TFDQuery;
     ComboBox1: TComboBox;
     Edit1: TEdit;
+    Button_consulta: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Button_consultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,6 +35,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit_consultaItem;
 
 procedure TForm_item.Button1Click(Sender: TObject);
 var
@@ -72,6 +76,18 @@ begin
     showMessage('Item adicionado com sucesso!');
     Edit1.Clear;
     ComboBox1.ClearSelection;
+  end;
+end;
+
+procedure TForm_item.Button_consultaClick(Sender: TObject);
+var
+  LForm_consultaItem: TForm_consultaItem;
+begin
+  LForm_consultaItem := TForm_consultaItem.Create(nil);
+  try
+    LForm_consultaItem.ShowModal;
+  finally
+    LForm_consultaItem.Free;
   end;
 end;
 

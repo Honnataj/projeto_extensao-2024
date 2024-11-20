@@ -1,6 +1,7 @@
 object Form1: TForm1
   Left = 0
   Top = 0
+  AutoSize = True
   Caption = 'Form1'
   ClientHeight = 545
   ClientWidth = 859
@@ -14515,6 +14516,7 @@ object Form1: TForm1
       'SharedCache=False'
       'LockingMode=Normal'
       'DriverID=SQLite')
+    Connected = True
     LoginPrompt = False
     Left = 624
     Top = 480

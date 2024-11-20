@@ -50,7 +50,8 @@ implementation
 
 {$R *.dfm}
 
-uses Unit_item, Unit_local_retirada, Unit_requerimento;
+uses Unit_item, Unit_local_retirada, Unit_requerimento,
+  Unit_consultaRequerimento;
 
 procedure TForm1.Button1Click(Sender: TObject);
 var

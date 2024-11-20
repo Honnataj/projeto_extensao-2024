@@ -16,7 +16,9 @@ type
     Button1: TButton;
     FDQuery1: TFDQuery;
     Edit1: TEdit;
+    Button_consulta: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button_consultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,6 +31,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit_consultaResponsavel;
 
 
 procedure TForm_responsavel.Button1Click(Sender: TObject);
@@ -51,5 +55,18 @@ begin
   else showMessage('Por favor, indique o nome do requerente.');
 end;
 
+
+procedure TForm_responsavel.Button_consultaClick(Sender: TObject);
+var
+  LForm_consultaResponsavel: TForm_consultaResponsavel;
+begin
+  LForm_consultaResponsavel := TForm_consultaResponsavel.Create(nil);
+  try
+    LForm_consultaResponsavel.ShowModal;
+  finally
+    LForm_consultaResponsavel.Free;
+  end;
+
+end;
 
 end.

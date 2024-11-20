@@ -16,7 +16,9 @@ type
     FDQuery1: TFDQuery;
     Button1: TButton;
     Edit1: TEdit;
+    Button_consulta: TButton;
     procedure Button1Click(Sender: TObject);
+    procedure Button_consultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -29,6 +31,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit_consultaLocalRetirada;
 
 procedure TForm_local_retirada.Button1Click(Sender: TObject);
 var
@@ -51,5 +55,17 @@ begin
 end;
 
 
+
+procedure TForm_local_retirada.Button_consultaClick(Sender: TObject);
+var
+  LForm_consultaLocalRetirada: TForm_consultaLocalRetirada;
+begin
+  LForm_consultaLocalRetirada := TForm_consultaLocalRetirada.Create(nil);
+  try
+    LForm_consultaLocalRetirada.ShowModal;
+  finally
+    LForm_consultaLocalRetirada.Free;
+  end;
+end;
 
 end.

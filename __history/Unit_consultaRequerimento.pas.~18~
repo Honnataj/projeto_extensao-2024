@@ -1,0 +1,46 @@
+unit Unit_consultaRequerimento;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, FireDAC.Stan.Intf, FireDAC.Stan.Option,
+  FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
+  FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids;
+
+type
+  TForm_consultaRequerimento = class(TForm)
+    DataSource1: TDataSource;
+    DBGrid1: TDBGrid;
+    FDQuery1: TFDQuery;
+    procedure FormActivate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form_consultaRequerimento: TForm_consultaRequerimento;
+
+implementation
+
+{$R *.dfm}
+
+procedure TForm_consultaRequerimento.FormActivate(Sender: TObject);
+begin
+  with FDQuery1.FormatOptions do begin
+    OwnMapRules := True;
+    with MapRules.Add do begin
+      SourceDataType := dtMemo;
+      TargetDataType := dtAnsiString;
+    end;
+    with MapRules.Add do begin
+      SourceDataType := dtInt32;
+      TargetDataType := dtInt64;
+    end;
+  end;
+end;
+
+end.

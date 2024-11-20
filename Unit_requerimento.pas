@@ -25,10 +25,12 @@ type
     ComboBox4: TComboBox;
     Edit2: TEdit;
     Edit3: TEdit;
+    Button_consulta: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
+    procedure Button_consultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -45,6 +47,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit_consultaRequerimento;
 
 procedure TForm_requerimento.Button1Click(Sender: TObject);
 var
@@ -130,6 +134,18 @@ begin
     ComboBox2.ClearSelection;
     ComboBox3.ClearSelection;
     ComboBox4.ClearSelection;
+  end;
+end;
+
+procedure TForm_requerimento.Button_consultaClick(Sender: TObject);
+var
+  LForm_consultaRequerimento: TForm_consultaRequerimento;
+begin
+  LForm_consultaRequerimento := TForm_consultaRequerimento.Create(nil);
+  try
+    LForm_consultaRequerimento.ShowModal;
+  finally
+    LForm_consultaRequerimento.Free;
   end;
 end;
 

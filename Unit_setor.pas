@@ -18,8 +18,10 @@ type
     Button1: TButton;
     ComboBox1: TComboBox;
     Edit1: TEdit;
+    Button_consulta: TButton;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
+    procedure Button_consultaClick(Sender: TObject);
   private
     { Private declarations }
   public
@@ -33,6 +35,8 @@ var
 implementation
 
 {$R *.dfm}
+
+uses Unit_consultaSetor;
 
 procedure TForm_setor.Button1Click(Sender: TObject);
 var
@@ -75,6 +79,18 @@ begin
   end;
   // FDQuery.Open;
   // FDquery1.NextRecordSet;
+end;
+
+procedure TForm_setor.Button_consultaClick(Sender: TObject);
+var
+LForm_consultaRequerimento: TForm_consultaSetor;
+begin
+  LForm_consultaRequerimento := TForm_consultaSetor.Create(nil);
+  try
+    LForm_consultaRequerimento.ShowModal;
+  finally
+    LForm_consultaRequerimento.Free;
+  end;
 end;
 
 procedure TForm_setor.FormActivate(Sender: TObject);
