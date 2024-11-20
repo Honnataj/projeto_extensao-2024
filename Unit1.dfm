@@ -3,7 +3,7 @@ object Form1: TForm1
   Top = 0
   Caption = 'Form1'
   ClientHeight = 545
-  ClientWidth = 907
+  ClientWidth = 859
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -12,11 +12,14 @@ object Form1: TForm1
   Font.Style = []
   OnClose = FormClose
   OnCreate = FormCreate
+  DesignSize = (
+    859
+    545)
   TextHeight = 15
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 907
+    Width = 859
     Height = 105
     Align = alTop
     Picture.Data = {
@@ -6719,15 +6722,18 @@ object Form1: TForm1
       B92F1967865923E7EEAB71D3D0D145243643F6BB83FF002D9BF21FE145145007
       FFD9}
     Stretch = True
-    ExplicitLeft = 424
-    ExplicitTop = 72
-    ExplicitWidth = 105
+    ExplicitLeft = -8
+    ExplicitTop = 40
+    ExplicitWidth = 934
   end
   object Image3: TImage
-    Left = 712
+    Left = 0
     Top = 8
-    Width = 97
-    Height = 97
+    Width = 859
+    Height = 91
+    Anchors = [akLeft, akTop, akRight]
+    Center = True
+    ParentShowHint = False
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000000960000
       009608060000003C0171E200000006624B474400FF00FF00FFA0BDA793000000
@@ -7638,14 +7644,18 @@ object Form1: TForm1
       00323032342D30392D32335430323A35303A33332B30303A3030ACBBF0D10000
       002874455874646174653A74696D657374616D7000323032342D30392D323354
       30323A35303A34342B30303A303034CCE6990000000049454E44AE426082}
-    Stretch = True
+    Proportional = True
+    ShowHint = False
+    ExplicitWidth = 934
   end
   object Image4: TImage
     Left = 0
     Top = 105
-    Width = 907
+    Width = 859
     Height = 335
     Align = alClient
+    Anchors = [akLeft, akTop, akRight]
+    Center = True
     Picture.Data = {
       0954506E67496D61676589504E470D0A1A0A0000000D49484452000001540000
       015408030000004C4C348700000003504C5445EEDCBB75382067000000097048
@@ -7675,15 +7685,13 @@ object Form1: TForm1
       C0D480A9015303A6064C0D981A3035606AC0D480A9015303A6064C0D981A3035
       7001787F015539495C5A0000000049454E44AE426082}
     Stretch = True
-    ExplicitLeft = 328
-    ExplicitTop = 408
-    ExplicitWidth = 105
-    ExplicitHeight = 105
+    ExplicitWidth = 934
+    ExplicitHeight = 264
   end
   object Image2: TImage
     Left = 0
     Top = 440
-    Width = 907
+    Width = 859
     Height = 105
     Align = alBottom
     Picture.Data = {
@@ -14386,67 +14394,120 @@ object Form1: TForm1
       B92F1967865923E7EEAB71D3D0D145243643F6BB83FF002D9BF21FE145145007
       FFD9}
     Stretch = True
-    ExplicitLeft = 608
-    ExplicitTop = 448
-    ExplicitWidth = 105
+    ExplicitLeft = 3
+    ExplicitTop = 437
+    ExplicitWidth = 923
   end
   object Button_responsavel: TButton
-    Left = 368
-    Top = 207
+    AlignWithMargins = True
+    Left = 8
+    Top = 128
     Width = 195
-    Height = 25
-    Caption = 'Cadastro de respons'#225'vel por setor'
+    Height = 49
+    Anchors = []
+    Caption = 'Cadastro de &respons'#225'vel por setor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
+    WordWrap = True
     OnClick = Button_responsavelClick
   end
   object Button_setor: TButton
-    Left = 368
-    Top = 238
+    AlignWithMargins = True
+    Left = 209
+    Top = 128
     Width = 195
-    Height = 25
-    Caption = 'Cadastro de setor'
+    Height = 49
+    Anchors = []
+    Caption = 'Cadastro de &setor'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 1
+    WordWrap = True
     OnClick = Button_setorClick
   end
   object Button_item: TButton
-    Left = 368
-    Top = 269
+    AlignWithMargins = True
+    Left = 455
+    Top = 128
     Width = 195
-    Height = 25
-    Caption = 'Cadastro de item'
+    Height = 49
+    Anchors = []
+    Caption = 'Cadastro de &item'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
+    WordWrap = True
     OnClick = Button_itemClick
   end
   object Button_local_retirada: TButton
-    Left = 368
-    Top = 300
+    AlignWithMargins = True
+    Left = 656
+    Top = 128
     Width = 195
-    Height = 25
-    Caption = 'Cadastro de local de retirada'
+    Height = 49
+    Anchors = []
+    Caption = 'Cadastro de &local de retirada'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
+    WordWrap = True
     OnClick = Button_local_retiradaClick
   end
   object Button_requerimento: TButton
-    Left = 626
-    Top = 207
+    AlignWithMargins = True
+    Left = 280
+    Top = 248
     Width = 281
     Height = 118
-    Caption = 'Cadastro de requerimento'
+    Anchors = []
+    Caption = '&Cadastro de Requerimento'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBtnShadow
+    Font.Height = -24
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 4
+    WordWrap = True
     OnClick = Button_requerimentoClick
   end
   object Button1: TButton
-    Left = 430
-    Top = 344
-    Width = 91
-    Height = 25
-    Caption = 'Gerar relat'#243'rio'
+    AlignWithMargins = True
+    Left = 656
+    Top = 376
+    Width = 195
+    Height = 49
+    Anchors = []
+    Caption = '&Gerar relat'#243'rio'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 5
     OnClick = Button1Click
   end
   object FDPhysSQLiteDriverLink1: TFDPhysSQLiteDriverLink
-    Left = 48
-    Top = 48
+    Left = 504
+    Top = 480
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
@@ -14455,8 +14516,8 @@ object Form1: TForm1
       'LockingMode=Normal'
       'DriverID=SQLite')
     LoginPrompt = False
-    Left = 168
-    Top = 48
+    Left = 624
+    Top = 480
   end
   object FDLocalSQL1: TFDLocalSQL
     Connection = FDConnection1
@@ -14464,12 +14525,12 @@ object Form1: TForm1
     DataSets = <
       item
       end>
-    Left = 264
-    Top = 48
+    Left = 720
+    Top = 480
   end
   object FDQuery1: TFDQuery
     Connection = FDConnection1
-    Left = 352
-    Top = 48
+    Left = 808
+    Top = 480
   end
 end
