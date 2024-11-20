@@ -1,4 +1,4 @@
-unit Unit1;
+﻿unit Unit1;
 
 interface
 
@@ -11,7 +11,8 @@ uses
   FireDAC.Phys.SQLite, FireDAC.VCLUI.Wait, Data.DB, FireDAC.Comp.Client,
   FireDAC.Phys.SQLiteVDataSet, FireDAC.Stan.Param, FireDAC.DatS,
   FireDAC.DApt.Intf, FireDAC.DApt, FireDAC.Comp.DataSet, Vcl.Grids, Vcl.DBGrids,
-  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Unit_responsavel, Unit_setor;
+  Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, Unit_responsavel, Unit_setor,
+  Vcl.Imaging.jpeg, Vcl.Imaging.pngimage;
 
 type
   TForm1 = class(TForm)
@@ -24,6 +25,10 @@ type
     Button_local_retirada: TButton;
     Button_requerimento: TButton;
     FDQuery1: TFDQuery;
+    Image1: TImage;
+    Image3: TImage;
+    Image4: TImage;
+    Image2: TImage;
     procedure FormCreate(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
     procedure Button_responsavelClick(Sender: TObject);
