@@ -169,14 +169,23 @@ end;
 procedure TForm_requerimento.ComboBox2Change(Sender: TObject);
 var
   indexItem: Integer;
+  i: Integer;
+  codigoLocal: Integer;
+  posicaoCombo: Integer;
 begin
   indexItem := ComboBox2.ItemIndex;
   FDQuery1.Close;
-  FDQUery1.SQL.Clear;
+  FDQuery1.SQL.Clear;
   FDQuery1.SQL.Add('SELECT local_retirada_codigo FROM TB_item WHERE codigo = :CodigoItem;');
-  FDQuery1.ParamByName('codigoItem').AsInteger := indexItem;
+  FDQuery1.ParamByName('codigoItem').AsInteger := codigoItem[indexItem];
   FDQuery1.Open;
-  ComboBox3.ItemIndex := FDQuery1.Fields.Fields[0].AsInteger;
+  codigoLocal := FDQuery1.Fields.Fields[0].AsInteger;
+  posicaoCombo := -1;
+  for i := 0 to Length(codigoLocalRetirada) - 1 do
+  begin
+    if codigoLocalRetirada[i] = codigoLocal then posicaoCombo := i;
+  end;
+  ComboBox3.ItemIndex := posicaoCombo;
   FDQuery1.Close;
 end;
 

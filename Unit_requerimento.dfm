@@ -14567,7 +14567,7 @@ object Form_requerimento: TForm_requerimento
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
     SQL.Strings = (
-      'SELECT * FROM TB_requerimento')
+      'SELECT * FROM TB_item')
     Left = 792
     Top = 456
   end

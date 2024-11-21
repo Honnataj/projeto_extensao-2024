@@ -14522,7 +14522,7 @@ object Form1: TForm1
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=banco_independentes.db'
+      'Database=banco\banco_independentes.db'
       'SharedCache=False'
       'LockingMode=Normal'
       'DriverID=SQLite')
