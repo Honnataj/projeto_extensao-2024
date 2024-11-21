@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.jpeg,
+  Vcl.Imaging.pngimage;
 
 type
   TForm_local_retirada = class(TForm)
@@ -17,6 +18,10 @@ type
     Button1: TButton;
     Edit1: TEdit;
     Button_consulta: TButton;
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
     procedure Button1Click(Sender: TObject);
     procedure Button_consultaClick(Sender: TObject);
   private

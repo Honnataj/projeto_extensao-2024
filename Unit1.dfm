@@ -1,9 +1,8 @@
 object Form1: TForm1
   Left = 0
   Top = 0
-  AutoSize = True
-  Caption = 'Form1'
-  ClientHeight = 545
+  Caption = 'P'#225'gina Inicial'
+  ClientHeight = 546
   ClientWidth = 859
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -15,7 +14,7 @@ object Form1: TForm1
   OnCreate = FormCreate
   DesignSize = (
     859
-    545)
+    546)
   TextHeight = 15
   object Image1: TImage
     Left = 0
@@ -7653,7 +7652,7 @@ object Form1: TForm1
     Left = 0
     Top = 105
     Width = 859
-    Height = 335
+    Height = 336
     Align = alClient
     Anchors = [akLeft, akTop, akRight]
     Center = True
@@ -7691,7 +7690,7 @@ object Form1: TForm1
   end
   object Image2: TImage
     Left = 0
-    Top = 440
+    Top = 441
     Width = 859
     Height = 105
     Align = alBottom
@@ -14474,7 +14473,7 @@ object Form1: TForm1
   object Button_requerimento: TButton
     AlignWithMargins = True
     Left = 280
-    Top = 248
+    Top = 249
     Width = 281
     Height = 118
     Anchors = []
@@ -14492,7 +14491,7 @@ object Form1: TForm1
   object Button1: TButton
     AlignWithMargins = True
     Left = 656
-    Top = 376
+    Top = 377
     Width = 195
     Height = 49
     Anchors = []

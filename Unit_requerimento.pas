@@ -8,7 +8,8 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.StdCtrls, Vcl.DBCtrls,
-  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids;
+  Vcl.Mask, Vcl.ExtCtrls, Vcl.Grids, Vcl.DBGrids, Vcl.Imaging.pngimage,
+  Vcl.Imaging.jpeg;
 
 type
   TForm_requerimento = class(TForm)
@@ -26,6 +27,10 @@ type
     Edit2: TEdit;
     Edit3: TEdit;
     Button_consulta: TButton;
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);

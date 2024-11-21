@@ -8,7 +8,8 @@ uses
   Vcl.StdCtrls, Vcl.DBCtrls, Vcl.Mask, Vcl.ExtCtrls, FireDAC.Stan.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
-  FireDAC.Comp.DataSet, FireDAC.Comp.Client;
+  FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Imaging.pngimage,
+  Vcl.Imaging.jpeg;
 
 type
   TForm_responsavel = class(TForm)
@@ -17,6 +18,10 @@ type
     FDQuery1: TFDQuery;
     Edit1: TEdit;
     Button_consulta: TButton;
+    Image1: TImage;
+    Image2: TImage;
+    Image3: TImage;
+    Image4: TImage;
     procedure Button1Click(Sender: TObject);
     procedure Button_consultaClick(Sender: TObject);
   private
