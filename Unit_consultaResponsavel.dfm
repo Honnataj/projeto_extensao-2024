@@ -14393,6 +14393,19 @@ object Form_consultaResponsavel: TForm_consultaResponsavel
     Stretch = True
     ExplicitLeft = -235
   end
+  object Label4: TLabel
+    Left = 132
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 105

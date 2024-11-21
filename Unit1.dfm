@@ -10,8 +10,6 @@ object Form1: TForm1
   Font.Height = -12
   Font.Name = 'Segoe UI'
   Font.Style = []
-  OnClose = FormClose
-  OnCreate = FormCreate
   DesignSize = (
     859
     546)
@@ -14398,6 +14396,19 @@ object Form1: TForm1
     ExplicitTop = 437
     ExplicitWidth = 923
   end
+  object Label4: TLabel
+    Left = 124
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
   object Button_responsavel: TButton
     AlignWithMargins = True
     Left = 8
@@ -14436,7 +14447,7 @@ object Form1: TForm1
   end
   object Button_item: TButton
     AlignWithMargins = True
-    Left = 455
+    Left = 656
     Top = 128
     Width = 195
     Height = 49
@@ -14454,7 +14465,7 @@ object Form1: TForm1
   end
   object Button_local_retirada: TButton
     AlignWithMargins = True
-    Left = 656
+    Left = 455
     Top = 128
     Width = 195
     Height = 49
@@ -14511,11 +14522,10 @@ object Form1: TForm1
   end
   object FDConnection1: TFDConnection
     Params.Strings = (
-      'Database=D:\projeto_extensao-2024\banco_independentes.db'
+      'Database=banco_independentes.db'
       'SharedCache=False'
       'LockingMode=Normal'
       'DriverID=SQLite')
-    Connected = True
     LoginPrompt = False
     Left = 624
     Top = 480

@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Option, FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS,
   FireDAC.Phys.Intf, FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt,
   FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Grids, Vcl.DBGrids,
-  Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+  Vcl.Imaging.pngimage, Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.StdCtrls;
 
 type
   TForm_consultaLocalRetirada = class(TForm)
@@ -19,6 +19,7 @@ type
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
+    Label4: TLabel;
   private
     { Private declarations }
   public

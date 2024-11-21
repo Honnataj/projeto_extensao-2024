@@ -13474,7 +13474,7 @@ object Form_consultaRequerimento: TForm_consultaRequerimento
     ExplicitTop = -6
   end
   object Image3: TImage
-    Left = 126
+    Left = 132
     Top = 8
     Width = 580
     Height = 91
@@ -14393,7 +14393,19 @@ object Form_consultaRequerimento: TForm_consultaRequerimento
       30323A35303A34342B30303A303034CCE6990000000049454E44AE426082}
     Proportional = True
     ShowHint = False
-    ExplicitWidth = 379
+  end
+  object Label4: TLabel
+    Left = 132
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
   end
   object DBGrid1: TDBGrid
     Left = 0

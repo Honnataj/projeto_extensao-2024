@@ -22,6 +22,8 @@ type
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
+    Label1: TLabel;
+    Label4: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button_consultaClick(Sender: TObject);
   private
@@ -53,7 +55,7 @@ begin
       Command.CommandKind := skInsert;
       ExecSQL;
     end;
-    showMessage('LOCAL DE RETIRADA ADICIONADO COM SUCESSO!');
+    showMessage('Local de retirada adicionado com sucesso!');
     Edit1.Clear;
   end
   else showMessage('Por favor, indique o nome do local de retirada');

@@ -3,8 +3,8 @@ object Form_item: TForm_item
   Top = 0
   AutoSize = True
   Caption = 'Cadastro de itens'
-  ClientHeight = 546
-  ClientWidth = 859
+  ClientHeight = 566
+  ClientWidth = 917
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -13,13 +13,13 @@ object Form_item: TForm_item
   Font.Style = []
   OnActivate = FormActivate
   DesignSize = (
-    859
-    546)
+    917
+    566)
   TextHeight = 15
   object Image1: TImage
     Left = 0
     Top = 0
-    Width = 859
+    Width = 917
     Height = 105
     Align = alTop
     Picture.Data = {
@@ -6727,8 +6727,8 @@ object Form_item: TForm_item
   end
   object Image2: TImage
     Left = 0
-    Top = 441
-    Width = 859
+    Top = 461
+    Width = 917
     Height = 105
     Align = alBottom
     Picture.Data = {
@@ -13438,7 +13438,7 @@ object Form_item: TForm_item
   object Image3: TImage
     Left = 0
     Top = 8
-    Width = 851
+    Width = 909
     Height = 91
     Anchors = [akLeft, akTop, akRight]
     Center = True
@@ -14360,8 +14360,8 @@ object Form_item: TForm_item
   object Image4: TImage
     Left = 0
     Top = 105
-    Width = 859
-    Height = 336
+    Width = 917
+    Height = 356
     Align = alClient
     Anchors = [akLeft, akTop, akRight]
     Center = True
@@ -14399,56 +14399,119 @@ object Form_item: TForm_item
     ExplicitHeight = 231
   end
   object Label2: TLabel
-    Left = 312
-    Top = 203
-    Width = 38
+    Left = 297
+    Top = 227
+    Width = 90
     Height = 15
-    Caption = 'NOME:'
+    Caption = 'NOME DO ITEM:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
-    Left = 237
-    Top = 248
-    Width = 113
+    Left = 269
+    Top = 272
+    Width = 118
     Height = 15
     Caption = 'LOCAL DE RETIRADA:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 321
+    Top = 127
+    Width = 271
+    Height = 40
+    Caption = 'Cadastro de itens'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 148
+    Top = 487
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 8
+    Top = 548
+    Width = 59
+    Height = 10
+    Caption = 'vai corinthians!'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -7
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
-    Left = 353
+    Left = 393
     Top = 344
     Width = 145
     Height = 41
     Caption = '&SALVAR REGISTRO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial Black'
+    Font.Style = [fsBold]
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
     AlignWithMargins = True
-    Left = 353
-    Top = 245
+    Left = 393
+    Top = 269
     Width = 145
     Height = 23
     Style = csDropDownList
     TabOrder = 1
   end
   object Edit1: TEdit
-    Left = 353
-    Top = 200
+    Left = 393
+    Top = 224
     Width = 145
     Height = 23
     TabOrder = 2
   end
   object Button_consulta: TButton
     Left = 760
-    Top = 410
-    Width = 75
+    Top = 402
+    Width = 83
     Height = 25
     Caption = '&Ver registros'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
     OnClick = Button_consultaClick
   end
   object FDQuery1: TFDQuery
     Connection = Form1.FDConnection1
-    Left = 784
-    Top = 464
+    Left = 800
+    Top = 480
   end
 end

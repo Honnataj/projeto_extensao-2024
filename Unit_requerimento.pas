@@ -31,6 +31,8 @@ type
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
+    Label1: TLabel;
+    Label2: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);

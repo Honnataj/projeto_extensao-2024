@@ -13433,7 +13433,7 @@ object Form_consultaItem: TForm_consultaItem
     ExplicitTop = 336
   end
   object Image3: TImage
-    Left = 100
+    Left = 109
     Top = 8
     Width = 632
     Height = 91
@@ -14352,7 +14352,6 @@ object Form_consultaItem: TForm_consultaItem
       30323A35303A34342B30303A303034CCE6990000000049454E44AE426082}
     Proportional = True
     ShowHint = False
-    ExplicitWidth = 397
   end
   object Image4: TImage
     Left = 0
@@ -14393,6 +14392,19 @@ object Form_consultaItem: TForm_consultaItem
     Stretch = True
     ExplicitLeft = -235
   end
+  object Label4: TLabel
+    Left = 132
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
   object DBGrid1: TDBGrid
     Left = 0
     Top = 105
@@ -14416,9 +14428,8 @@ object Form_consultaItem: TForm_consultaItem
       end
       item
         Expanded = False
-        FieldName = 'Local de retirada'
-        Title.Caption = 'Local de retirada habitual'
-        Width = 160
+        FieldName = 'Local de retirada habitual'
+        Width = 240
         Visible = True
       end>
   end

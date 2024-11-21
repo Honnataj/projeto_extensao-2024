@@ -22,6 +22,8 @@ type
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
+    Label1: TLabel;
+    Label3: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure Button_consultaClick(Sender: TObject);
   private

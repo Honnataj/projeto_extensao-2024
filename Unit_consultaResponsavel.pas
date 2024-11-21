@@ -8,7 +8,7 @@ uses
   FireDAC.Stan.Param, FireDAC.Stan.Error, FireDAC.DatS, FireDAC.Phys.Intf,
   FireDAC.DApt.Intf, FireDAC.Stan.Async, FireDAC.DApt, Data.DB, Vcl.Grids,
   Vcl.DBGrids, FireDAC.Comp.DataSet, FireDAC.Comp.Client, Vcl.Imaging.pngimage,
-  Vcl.Imaging.jpeg, Vcl.ExtCtrls;
+  Vcl.Imaging.jpeg, Vcl.ExtCtrls, Vcl.StdCtrls;
 
 type
   TForm_consultaResponsavel = class(TForm)
@@ -19,6 +19,7 @@ type
     Image2: TImage;
     Image3: TImage;
     Image4: TImage;
+    Label4: TLabel;
   private
     { Private declarations }
   public

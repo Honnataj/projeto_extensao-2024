@@ -24,6 +24,9 @@ type
     Image3: TImage;
     Image1: TImage;
     Image4: TImage;
+    Label1: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
     procedure Button1Click(Sender: TObject);
     procedure FormActivate(Sender: TObject);
     procedure Button_consultaClick(Sender: TObject);

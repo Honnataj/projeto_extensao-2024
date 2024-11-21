@@ -29,8 +29,7 @@ type
     Image3: TImage;
     Image4: TImage;
     Image2: TImage;
-    procedure FormCreate(Sender: TObject);
-    procedure FormClose(Sender: TObject; var Action: TCloseAction);
+    Label4: TLabel;
     procedure Button_responsavelClick(Sender: TObject);
     procedure Button_itemClick(Sender: TObject);
     procedure Button_local_retiradaClick(Sender: TObject);
@@ -60,7 +59,7 @@ var
   consultaSQL: string;
   i: Integer;
 begin
-  consultaSQL := 'SELECT TB_req.data_requerimento, TB_req.quantidade,TB_req.requerente_nao_responsavel, TB_res.nome,TB_item.nome,TB_loc.nome,TB_setor.nome FROM TB_requerimento AS TB_req LEFT JOIN TB_responsavel AS TB_res ON TB_req.codigo = TB_res.codigo LEFT JOIN TB_item ON TB_req.codigo = TB_item.codigo LEFT JOIN TB_local_retirada AS TB_loc ON TB_req.codigo = TB_loc.codigo LEFT JOIN TB_setor ON TB_req.codigo = TB_setor.codigo';
+  consultaSQL := 'SELECT r.data_requerimento AS Data, r.quantidade AS Quantidade, item.nome AS Item, res.nome AS Requerente, setor.nome AS Setor, r.requerente_nao_responsavel AS ''Requerente não oficial'', lr.nome AS ''Local de retirada'' FROM TB_requerimento AS r left join TB_responsavel AS res ON res.codigo = r.requerente_responsavel_codigo inner join TB_item AS item on item.codigo = r.item_codigo inner join TB_local_retirada AS lr ON lr.codigo = r.local_retirada_codigo inner join TB_setor AS setor on setor.codigo = r.setor_codigo';
   linha := '';
   textoCSV := TStringList.Create;
   with FDQuery1 do begin
@@ -154,17 +153,6 @@ begin
     LForm_setor.Free;
   end;
 end;
-
-procedure TForm1.FormClose(Sender: TObject; var Action: TCloseAction);
-begin
-  //TFDTable1.Close();
-end;
-
-procedure TForm1.FormCreate(Sender: TObject);
-begin
-  //TFDTable1.Open();
-end;
-
 
   //Text := Copy(TFDTable1valorVarchar.AsString, 1, 50);
 

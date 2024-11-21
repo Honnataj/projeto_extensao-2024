@@ -14392,18 +14392,56 @@ object Form_responsavel: TForm_responsavel
     ExplicitLeft = 235
   end
   object Label2: TLabel
-    Left = 313
-    Top = 229
+    Left = 304
+    Top = 223
     Width = 38
     Height = 15
     Caption = 'NOME:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 229
+    Top = 135
+    Width = 397
+    Height = 40
+    Caption = 'Cadastro de respons'#225'veis'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 119
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
     Left = 354
-    Top = 314
+    Top = 266
     Width = 146
     Height = 49
     Caption = '&SALVAR REGISTRO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
@@ -14415,11 +14453,17 @@ object Form_responsavel: TForm_responsavel
     TabOrder = 1
   end
   object Button_consulta: TButton
-    Left = 760
+    Left = 752
     Top = 402
-    Width = 75
+    Width = 83
     Height = 25
     Caption = '&Ver registros'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 2
     OnClick = Button_consultaClick
   end

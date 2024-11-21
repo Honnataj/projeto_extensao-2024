@@ -14395,52 +14395,114 @@ object Form_requerimento: TForm_requerimento
     ExplicitHeight = 383
   end
   object Label3: TLabel
-    Left = 276
-    Top = 156
-    Width = 76
+    Left = 269
+    Top = 172
+    Width = 81
     Height = 15
     Caption = 'QUANTIDADE:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label4: TLabel
-    Left = 279
-    Top = 232
-    Width = 73
+    Left = 272
+    Top = 248
+    Width = 77
     Height = 15
     Caption = 'REQUERENTE:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label6: TLabel
-    Left = 323
-    Top = 190
-    Width = 29
+    Left = 316
+    Top = 206
+    Width = 31
     Height = 15
     Caption = 'ITEM:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label7: TLabel
-    Left = 239
-    Top = 272
-    Width = 113
+    Left = 232
+    Top = 288
+    Width = 118
     Height = 15
     Caption = 'LOCAL DE RETIRADA:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label8: TLabel
-    Left = 316
-    Top = 312
-    Width = 36
+    Left = 309
+    Top = 328
+    Width = 40
     Height = 15
     Caption = 'SETOR:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 213
+    Top = 111
+    Width = 418
+    Height = 40
+    Caption = 'Cadastro de requerimentos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 119
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
     Left = 355
-    Top = 351
+    Top = 378
     Width = 145
     Height = 50
-    Caption = 'SALVAR REGISTRO'
+    Caption = '&SALVAR REGISTRO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
     Left = 355
-    Top = 229
+    Top = 245
     Width = 145
     Height = 23
     Style = csDropDownList
@@ -14449,7 +14511,7 @@ object Form_requerimento: TForm_requerimento
   end
   object ComboBox2: TComboBox
     Left = 355
-    Top = 187
+    Top = 203
     Width = 145
     Height = 23
     Style = csDropDownList
@@ -14458,7 +14520,7 @@ object Form_requerimento: TForm_requerimento
   end
   object ComboBox3: TComboBox
     Left = 355
-    Top = 269
+    Top = 285
     Width = 145
     Height = 23
     Style = csDropDownList
@@ -14466,7 +14528,7 @@ object Form_requerimento: TForm_requerimento
   end
   object ComboBox4: TComboBox
     Left = 355
-    Top = 309
+    Top = 325
     Width = 145
     Height = 23
     Style = csDropDownList
@@ -14474,25 +14536,31 @@ object Form_requerimento: TForm_requerimento
   end
   object Edit2: TEdit
     Left = 355
-    Top = 153
+    Top = 169
     Width = 33
     Height = 23
     TabOrder = 5
   end
   object Edit3: TEdit
     Left = 506
-    Top = 229
+    Top = 245
     Width = 222
     Height = 23
     TabOrder = 6
     Visible = False
   end
   object Button_consulta: TButton
-    Left = 761
+    Left = 752
     Top = 403
-    Width = 75
+    Width = 84
     Height = 25
-    Caption = 'Ver registros'
+    Caption = '&Ver registros'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 7
     OnClick = Button_consultaClick
   end

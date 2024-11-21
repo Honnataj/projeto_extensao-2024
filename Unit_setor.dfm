@@ -14395,31 +14395,75 @@ object Form_setor: TForm_setor
     ExplicitHeight = 335
   end
   object Label2: TLabel
-    Left = 270
-    Top = 208
-    Width = 94
+    Left = 262
+    Top = 224
+    Width = 99
     Height = 15
     Caption = 'NOME DO SETOR:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
   end
   object Label3: TLabel
-    Left = 218
-    Top = 237
-    Width = 146
+    Left = 207
+    Top = 253
+    Width = 154
     Height = 15
     Caption = 'RESPONS'#193'VEL PELO SETOR:'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -12
+    Font.Name = 'Segoe UI'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 277
+    Top = 135
+    Width = 310
+    Height = 40
+    Caption = 'Cadastro de setores'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBrown
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 127
+    Top = 471
+    Width = 609
+    Height = 40
+    Caption = 'Festa do Pe'#227'o de Boiadeiro de Barretos'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clBeige
+    Font.Height = -28
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
   end
   object Button1: TButton
     Left = 367
-    Top = 312
+    Top = 296
     Width = 145
     Height = 49
     Caption = '&SALVAR REGISTRO'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial Black'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 0
     OnClick = Button1Click
   end
   object ComboBox1: TComboBox
     Left = 367
-    Top = 234
+    Top = 250
     Width = 145
     Height = 23
     Style = csDropDownList
@@ -14427,17 +14471,23 @@ object Form_setor: TForm_setor
   end
   object Edit1: TEdit
     Left = 367
-    Top = 205
+    Top = 221
     Width = 145
     Height = 23
     TabOrder = 2
   end
   object Button_consulta: TButton
-    Left = 760
+    Left = 752
     Top = 400
-    Width = 75
+    Width = 83
     Height = 25
     Caption = '&Ver registros'
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -12
+    Font.Name = 'Arial'
+    Font.Style = []
+    ParentFont = False
     TabOrder = 3
     OnClick = Button_consultaClick
   end
